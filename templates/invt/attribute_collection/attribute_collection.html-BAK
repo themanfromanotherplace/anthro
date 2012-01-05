@@ -1,0 +1,56 @@
+<script type="text/javascript">
+<venda_tpcomment>
+/*
+* Pls. note that a protocol and a collection of slot have defined under 'invt/alternative_script'.
+* Product type = <venda_invtivtype>
+*/
+</venda_tpcomment>
+var params = [];
+for (var obj in attributeData) {
+	/* Occur on IE ONLY - the 1st value will be 'function' so, it need to put the condition to protect the 1st value ONLY */
+	if (typeof attributeData[obj] != "function") {
+		var imageURL = "";
+		var sizeXS = [];
+		var sizeM = [];
+		var sizeL = [];
+
+		if (typeof(attributeData[obj].attr) == "object"){
+			for (var each in attributeSwatchImage) {
+				if (attributeData[obj].attr.att1 == attributeSwatchImage[each].attr){
+					imageURL = attributeSwatchImage[each].imageURL;
+				}
+			}
+		}
+	
+		// used for keeping an image size for all attribute colour
+		for(var i = 0; i < slot.length; i++) {
+			sizeXS.push(protocol+"s7ondemand1.scene7.com/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData[obj].detail.atrsuplsku+slot[i]+"?$uk_pdt_thumb$");
+			sizeM.push(protocol+"s7ondemand1.scene7.com/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData[obj].detail.atrsuplsku+slot[i]+"?$uk_pdt_medium$");
+			sizeL.push(protocol+"s7ondemand1.scene7.com/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData[obj].detail.atrsuplsku+slot[i]+"?$uk-zoom-5x$");
+		}
+		
+		var data = Venda.ProductDetail.findExistingElement(params,attributeData[obj].attr.att1);
+		if(data.found) {
+			var prop = params[data.elementId].properties; //just shot hand
+			prop.setxsalt.join(sizeXS);
+			prop.setmalt.join(sizeM);
+			prop.setlalt.join(sizeL);
+		} else {
+			params.push({
+			colour:attributeData[obj].attr.att1,
+			properties: {
+				setswatch: imageURL,
+				setxsalt: sizeXS,
+				setmalt: sizeM,
+				setlalt: sizeL,
+				clicked: [false, false, false, false, false, false, false, false, false]
+			}
+			});
+		}
+	}
+}
+
+for(var i = 0; i < params.length; i++){
+	Venda.ProductDetail.loadImage(params[i].colour,params[i].properties);
+}
+</script>

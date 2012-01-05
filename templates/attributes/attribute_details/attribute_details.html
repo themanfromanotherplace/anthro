@@ -1,0 +1,43 @@
+<div class="invtmedia" id="image_<venda_invtuuid>">
+
+</div>
+
+<div class="attrproducts">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="log" value="22">
+<input type="hidden" name="mode" value="add">
+<input type="hidden" name="ex" value="co_disp-shopc">
+<input type="hidden" name="buy" value="<venda_invtref>">
+<input type="hidden" name="icat" value="<venda_cattree index=-1,value=catref>">
+<input type="hidden" name="ivref" value="<venda_invtref>">
+<input type="hidden" name="curpage" value="<venda_tpxt mode=get,name=curpage>"><!-- tpxt "curpage"-->
+<input type="hidden" name="next" value="">
+<div>
+<span id="PriceDiv_<venda_invtuuid>Label"> </span>
+<span id="PriceDiv_<venda_invtuuid>">
+ <venda_block invtatrminsubsell&gt;0.00><venda_text id=site.from><venda_currsym><venda_invtatrminsubsell></venda_block>
+ <venda_block invtatrminsubsell=0.00><venda_currsym><venda_invtsell></venda_block>
+</span>
+</div>
+<div><span id="msrpDiv_<venda_invtuuid>Label"><!-- MSRP price Label --></span><span id="msrpDiv_<venda_invtuuid>"><!-- MSRP price value --></span></div>
+<div><span id="wasDiv_<venda_invtuuid>Label"><!-- WAS price Label --></span><span id="wasDiv_<venda_invtuuid>"><!-- WAS price value --></span></div>
+<div><span id="savingDiv_<venda_invtuuid>Label"><!-- SAVING price Label --></span><span id="savingDiv_<venda_invtuuid>"><!-- SAVING price value --></span></div>
+ <p><label for="qty"><venda_text id=site.quantity></label> <input name="qty" id="qty" type="text" value="1" size="3" maxlength="3" onchange="Venda.Platform.qtyValidate(this);" onkeypress="if(event.keyCode==13){ document.form<venda_invtref>.ex.value='co_wizr-shopcart'; return getProduct('<venda_invtuuid>').checkAttributes(document.form<venda_invtref>,'');  }"></p>
+ <fieldset>
+	<legend class="pdattribute"><venda_text id=site.product_detail.attribute.legend></legend>
+	<venda_block label=21,selatt1=notnull>
+	<label for="att1_<venda_invtuuid>"><venda_att1><venda_text id=site.product_detail.attribute.label_colon></label> 
+	<select name="att1" id="att1_<venda_invtuuid>" onChange="getProduct('<venda_invtuuid>').changeAttributes(this)"><option value=""><venda_text id=site.product_detail.attribute.att1></option><venda_selatt1></select><br></venda_block label=21>
+	<venda_block label=22,selatt2=notnull><label for="att2_<venda_invtuuid>"><venda_att2><venda_text id=site.product_detail.attribute.label_colon></label> <select name="att2" id="att2_<venda_invtuuid>" onChange="getProduct('<venda_invtuuid>').changeAttributes(this)"><option value=""><venda_text id=site.product_detail.attribute.att2></option><venda_selatt2></select><br></venda_block label=22>
+	<venda_block label=23,selatt3=notnull><label for="att3_<venda_invtuuid>"><venda_att3><venda_text id=site.product_detail.attribute.label_colon></label> <select name="att3" id="att3_<venda_invtuuid>" onChange="getProduct('<venda_invtuuid>').changeAttributes(this)"><option value=""><venda_text id=site.product_detail.attribute.att3></option><venda_selatt3></select><br></venda_block label=23>
+	<venda_block label=24,selatt4=notnull><label for="att4_<venda_invtuuid>"><venda_att4><venda_text id=site.product_detail.attribute.label_colon></label> <select name="att4" id="att4_<venda_invtuuid>" onChange="getProduct('<venda_invtuuid>').changeAttributes(this)"><option value=""><venda_text id=site.product_detail.attribute.att4></option><venda_selatt4></select><br></venda_block label=24>
+	</fieldset>
+
+<venda_block label=132,invtpreorder!=1>
+	<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/<venda_sessionlanguage>/bt_addtobasket.gif" class="add" alt="<venda_text id=site.button.alt.add_to_basket.invt>" onClick="document.form<venda_invtref>.ex.value='co_disp-shopc'; return getProduct('<venda_invtuuid>').checkAttributes(this.form,'','<venda_block label=144,workflow=locayta>locayta</venda_block label=144>');">
+	<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/<venda_sessionlanguage>bt_buynow.gif" class="buy" alt="<venda_text id=site.button.alt.buy_now.invt>" onClick="document.form<venda_invtref>.ex.value='co_wizr-shopcart'; return getProduct('<venda_invtuuid>').checkAttributes(this.form,'')">
+</venda_block label=132>
+	<venda_block label=133,invtpreorder=1>
+	<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_preorder.gif" alt="<venda_text id=site.button.alt.preorder.invt>" class="preorder" onClick="document.form<venda_invtref>.ex.value='co_disp-shopc'; return getProduct('<venda_invtuuid>').checkAttributes(this.form,'','<venda_block label=144,workflow=locayta>locayta</venda_block label=144>');">
+	</venda_block label=133>
+</div>

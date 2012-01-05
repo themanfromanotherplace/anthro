@@ -1,0 +1,35 @@
+<!-- tracking tag when add product -->
+<form style="display:none;" name="productAddform">
+<textarea id="productAdd">ProductAdd|<venda_invtref>|<venda_invtname>|<venda_addedmsg msg=addedqty>|<venda_invtsell>|<venda_invtcatref0>|</textarea>
+</form>
+<script type="text/javascript">
+	var appendText = function(elementTarget,strAppend){
+		if(document.getElementById(elementTarget).value.indexOf(strAppend)==-1){
+			document.getElementById(elementTarget).value += strAppend;
+		}
+	}
+	var cj = new CookieJar({expires:'',path: '/'});
+	if(cj.get("source")!=null){
+		var value = cj.get("source");
+		appendText("productAdd",value);
+	}
+</script>
+<!-- end Venda tracking -->
+<venda_block label=815,mode=value,<venda_setting type=ebiz,name=tracktagcoremetrics>=1>   
+         <script type="text/javascript">  
+		 cmSetCurrencyCode("<venda_block label=112,mode=value,<venda_sessionlocation>=uk>GBP</venda_block label=112><venda_block label=113,mode=value,<venda_sessionlocation>!=uk>EUR</venda_block label=113>");
+		if (document.getElementById("attr-sellprice")){
+			prodprice = document.getElementById("attr-sellprice").innerHTML;
+			prodprice = prodprice.slice(1);
+		} else {
+			prodprice = <venda_invtsell>;
+		}
+         names=new Array("prodId", "prodName", "prodQty", "prodPrice", "catId");   
+         values=new Array("<venda_invtref>", "<venda_invtname>", "<venda_addedmsg msg=addedqty>", prodprice, "<venda_invtcatref0>");   
+         cmCreateShopAction5Tag(values[0], values[1], values[2], values[3], values[4]);   
+         stepName="invt/<venda_invtref>_added";   
+         cmDisplayShop5s();   
+         //cmCreateProductviewTag(values[0], values[1], values[4]);   
+         </script>   
+</venda_block label=815> 
+<script type="text/javascript" src="/venda-support/js/tracking/prod_stats_counter.js"></script>

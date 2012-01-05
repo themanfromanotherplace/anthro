@@ -9,18 +9,20 @@
 // - configPopupPanel to define tag values used for lightbox panel when view lare image link is clicked
 </venda_tpcomment>
 	
-	Venda.ProductDetail.init("configObjArea",{
+	//var prodDetail<venda_invtatrsku> = new MultiProductDetailClass(); - thie is decalred in /templates/invt/productdetail_productset
+	
+	prodDetail<venda_invtatrsku>.init("configObjArea",{
 		objDropdown: document.form.att1,
 		objDefaultImage: document.multi,
 		objProduct: getProduct('<venda_invtuuid>'),
-		objMediumArea: (document.getElementById("productdetail-image<venda_invtuuid>")) ? document.getElementById("productdetail-image<venda_invtuuid>") : "",
-		objLinkArea: (document.getElementById("productdetail-viewlarge<venda_invtuuid>")) ? document.getElementById("productdetail-viewlarge<venda_invtuuid>") : "",
-		objSwatchArea: document.getElementById("productdetail-swatch<venda_invtuuid>"),
-		objAlternateViewArea: (document.getElementById("productdetail-altview<venda_invtuuid>")) ? document.getElementById("productdetail-altview<venda_invtuuid>") : "",
-              objProductUniqueId: "<venda_invtuuid>"
+		objMediumArea: (document.getElementById("productdetail-image<venda_invtatrsku>")) ? document.getElementById("productdetail-image<venda_invtatrsku>") : "",
+		objLinkArea: (document.getElementById("productdetail-viewlarge<venda_invtatrsku>")) ? document.getElementById("productdetail-viewlarge<venda_invtatrsku>") : "",
+		objSwatchArea: document.getElementById("productdetail-swatch<venda_invtatrsku>"),
+		objAlternateViewArea: (document.getElementById("productdetail-altview<venda_invtatrsku>")) ? document.getElementById("productdetail-altview<venda_invtatrsku>") : "",
+		objProductUniqueId: "<venda_invtatrsku>"
 	});
-	
-	Venda.ProductDetail.init("configDefault",{
+
+	prodDetail<venda_invtatrsku>.init("configDefault",{
 		productName: "<venda_invtname>",
 		mediumAltText: "<venda_invtname>",
 		mediumTitleText: "<venda_text id=site.product_detail.main_image.title_text>",
@@ -29,20 +31,20 @@
 		downloadText: "<venda_text id=site.product_detail.download_image>",
 		largeNotAvailAltText: "<venda_text id=site.product_detail.viewlarge.unavailable_alt>",
 		swatchTitle: "<venda_invtname>",
-		loadingImage: "<div id=\"loadingMain<venda_invtuuid>\"><img src=\"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading.gif\"></div>",
+		loadingImage: "<div id=\"loadingMain<venda_invtatrsku>\"><img src=\"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading.gif\"></div>",
 		noImage: {
 			medium: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/spacer_m.gif"
 		}
 	});
 	
-	Venda.ProductDetail.init("configImageware",{
+	prodDetail<venda_invtatrsku>.init("configImageware",{
 		enableImageware: "<venda_pdxtimageware>",
 		zoomableText: "<venda_text id=site.product_detail.zoomable_image>",
-		zoomableImagelink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_img2<venda_invtuuid>\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">",
-		zoomableTextlink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_link2<venda_invtuuid>\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">"
+		zoomableImagelink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_img2\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">",
+		zoomableTextlink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_link2\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">"
 	});
 	
-	Venda.ProductDetail.init("configAlternateView",{
+	prodDetail<venda_invtatrsku>.init("configAlternateView",{
 		alternateViewPagedStyle: "image",
 		alternateViewBehavior: "onClick",
 		alternateViewAltText: "<venda_text id=site.product_detail.alternateview.alt_text>",
@@ -50,7 +52,7 @@
 		alternateViewHeaderText: "<venda_text id=site.product_detail.alternateview.header_text>"
 	});
 	
-	Venda.ProductDetail.init("configPopupPanel",{
+	prodDetail<venda_invtatrsku>.ProductDetail.init("configPopupPanel",{
 		popupHeader: "<venda_invtname>",
 		loadingHeader: "<venda_text id=site.product_detail.enlarge_panel.loading_header_text>",
 		loadingPanel: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading_bar.gif",
@@ -58,6 +60,37 @@
 		closePanelTitle: "<venda_text id=site.product_detail.enlarge_panel.close_image_title>",
 		closeTextLink: "<venda_text id=site.product_detail.enlarge_panel.close_window_textlink>"
 	});
+	
+	
+
+	//could add all required objects on init function?? or in constructor
+	//new instance of prod manager for the whole page
+	//DO NOT CHANGE THIS VAR AS ITS USED IN OTHER FILES
+	var productManager = new MultiProductDetailManager();
+	
+	//register a product instance
+	productManager.addProductObject(prodDetail<venda_invtatrsku>);
+	
+	
+	//creat a new product attribute swatch - could be done in product class
+	var prodAttSwa<venda_invtatrsku> = new AttributeSwatchClass();
+	
+	prodAttSwa<venda_invtatrsku>.setProductDetailInstance(prodDetail<venda_invtatrsku>); // connect the swatch to the product object
+	
+	prodAttSwa<venda_invtatrsku>.init({
+		formHTMLObject: document.form<venda_invtref> // form for product swatch should be unique for each product...
+	});
+	
+	prodAttSwa<venda_invtatrsku>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
+
+
+	prodDetail<venda_invtatrsku>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
+	prodDetail<venda_invtatrsku>.setProductAttributeSwatch(prodAttSwa<venda_invtatrsku>); // connect the swatch to the product object
+	
+	
+	var instance = productManager.getProductObjectByUniqueId("<venda_invtatrsku>"); // testing func for global retreival of correct product instance
+		
+	
 	<venda_tpcomment>// END - javascript for all initial value </venda_tpcomment>
 	
 	<venda_tpcomment>// Declare a protocol and a collection of slot (depended on product type) which also use on 'attribute_collection'</venda_tpcomment>
@@ -68,6 +101,9 @@
 	<venda_block label=22,invtivtype=shoes>var slot = ["_b","_c","_g","_h","_u","_e"];</venda_block label=22>
 	<venda_block label=23,invtivtype=accessories>var slot = ["_b","_c","_m","_e"];</venda_block label=23>
 	<venda_block label=24,invtivtype=home,invtivtype=family,invtivtype=familyset,operator=or>var slot = ["_b","_c","_d","_g","_h","_m","_f","_p","_e"];</venda_block label=24>
+
+
+
 
 	<venda_block label=200,chkatt=null>
 	var sizeXS = [];

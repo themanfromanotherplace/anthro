@@ -1,0 +1,21 @@
+<li<venda_block label=25,itemcount1=1> class="first"</venda_block label=25>>
+	<div class="details">
+		<h3><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></h3>
+		<p class="invtdesc2"><venda_invtdesc2></p>
+		<venda_block label=10,invtatrtot&lt;1>
+		<!-- if product doesn't have attributes -->
+		<p class="price"><venda_currsym><venda_invtsell></p>
+		</venda_block label=10>
+		<venda_block label=20,invtatrtot&gt;0>
+		<!-- if product does have attributes -->
+		<p class="price">
+		<venda_block invtatrminsubsell&gt;0.00><venda_text id=site.from><venda_currsym><venda_invtatrminsubsell></venda_block>
+		<venda_block invtatrminsubsell=0.00><venda_invtsymsell></venda_block>
+		</p>
+		</venda_block label=20>
+		<p class="moreinfo"><a href="<venda_dispview invt=<venda_invtref>>" title="<venda_text id=site.link.title.more.invt>"><venda_text id=site.link.more></a></p>
+	</div>
+	<div class="image">
+	<a href="<venda_dispview invt=<venda_invtref>>?htxt=<venda_htxt mode=make,accessory=<venda_invtref>>"><venda_inctemplate name=Scene7completelook,type=includes/Scene7></a>
+	</div>
+</li>

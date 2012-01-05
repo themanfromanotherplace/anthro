@@ -1,6 +1,3 @@
-
-
-
 <venda_tpcomment><!-- BAZAAR VOICE: initial javascript/css --></venda_tpcomment>
 <venda_tpcomment><!-- set tpxt for bvcode --></venda_tpcomment>
 <venda_tpxt mode=set,name=bvcodeen,value=5310-en_gb><venda_tpxt mode=set,name=bvcodede,value=5310-de_de>
@@ -19,11 +16,11 @@
 function ratingsDisplayed(totalReviewsCount, avgRating, ratingsOnlyReviewCount, recommendPercentage, productID)
 {
     if (totalReviewsCount == 0) {
-		jQuery("#BVReviewsContainer-<venda_invtref>").hide();
-		jQuery("#BVSVPLinkContainer-<venda_invtref>").hide();
-		jQuery("#noReview-<venda_invtref>").html(jQuery("div#BVRRRatingSummaryLinkWriteFirstID-<venda_invtref>").html());
+		jQuery("#BVReviewsContainer").hide();
+		jQuery("#BVSVPLinkContainer").hide();
+		jQuery("#noReview").html(jQuery("div#BVRRRatingSummaryLinkWriteFirstID").html());
     }
-	jQuery("#BVRRRatingSummaryLinkReadID-<venda_invtref> a").click(function(){
+	jQuery("#BVRRRatingSummaryLinkReadID a").click(function(){
 		productTab.set('activeIndex', 2);
 
    });
@@ -36,38 +33,26 @@ function ratingsDisplayed(totalReviewsCount, avgRating, ratingsOnlyReviewCount, 
 <venda_tpcomment><!-- BAZAAR VOICE: initial javascript/css  END --></venda_tpcomment>
 
 <venda_tpcomment><!-- tag values used for lightbox and product cycling --></venda_tpcomment>
-<div id="tag-redirect<venda_invtuuid>" style="display:none;"><venda_dispview page=installflash></div>
-<div id="tag-ebizref<venda_invtuuid>" style="display:none;"><venda_setting type=ebiz,name=ref></div>
-<div id="tag-invtref<venda_invtuuid>" style="display:none;"><venda_invtref></div>
-<div id="tag-invtname<venda_invtuuid>" style="display:none;"><venda_invtname></div>
-<div id="tag-lightboxloadmessage<venda_invtuuid>" style="display:none;"><venda_text id=site.lightboxloadmessage></div>
-<div id="tempLightbox<venda_invtuuid>" style="display:none;"><venda_tpcomment><!-- NEEDED for temporary storage of lightbox content --></venda_tpcomment></div>
+<div id="tag-redirect" style="display:none;"><venda_dispview page=installflash></div>
+<div id="tag-ebizref" style="display:none;"><venda_setting type=ebiz,name=ref></div>
+<div id="tag-invtref" style="display:none;"><venda_invtref></div>
+<div id="tag-invtname" style="display:none;"><venda_invtname></div>
+<div id="tag-lightboxloadmessage" style="display:none;"><venda_text id=site.lightboxloadmessage></div>
+<div id="tempLightbox" style="display:none;"><venda_tpcomment><!-- NEEDED for temporary storage of lightbox content --></venda_tpcomment></div>
 <venda_tpcomment><!-- tag values used for tell a friend, emwbis, write and read a review popups --></venda_tpcomment>
-<div id="tag-loadmessage<venda_invtuuid>" style="display:none;"><venda_text id=site.loadmessage></div>
+<div id="tag-loadmessage" style="display:none;"><venda_text id=site.loadmessage></div>
 
 <script type="text/javascript">
-Venda.ProductDetail.panelWidth = "511";
+
+var prodDetail<venda_invtatrsku> = new MultiProductDetailClass();
+
+prodDetail<venda_invtatrsku>.panelWidth = "511";
 
 <venda_tpcomment>// START - javascript for lightbox. Please remove if not needed </venda_tpcomment>
 <venda_tpcomment>// see /venda-support/js/Venda/Widget/LightBox.js for usage details</venda_tpcomment>
-
-
-
-
-if (typeof Venda.Widget.Lightbox != "undefined") {
-
-
-
-//need to manage new lightboxes for each product on page...
-//...extend Lightbox class
-
-//create LightBox namespace
-Venda.namespace('Widget.Lightbox_<venda_invtref>');
-Venda.Widget.Lightbox_<venda_invtref> = function(){};
-Venda.Widget.Lightbox_<venda_invtref> = jQuery.extend(true, {}, Venda.Widget.Lightbox);
-
+if (typeof Venda.Widget.Lightbox != "undefined" || Venda.Widget.Lightbox) {
 	<venda_tpcomment>//set param to 'undefined' to disable hooks</venda_tpcomment>
-	Venda.Widget.Lightbox_<venda_invtref>.create(['zoom_link<venda_invtuuid>', 'zoom_img<venda_invtuuid>'], ['enlarge_link<venda_invtuuid>', 'enlarge_img<venda_invtuuid>'], 
+	Venda.Widget.Lightbox.create(['zoom_link', 'zoom_img'], ['enlarge_link', 'enlarge_img'], 
 		{
 			drag: true, modal: true, fixedCenter: true, fade: 0.24,
 		//flash settings
@@ -75,9 +60,9 @@ flSource:'http://imageware.venda.com/imageware/fsi4/fsi.swf?FPXBase=http://image
 , flId:'lightboxflash', flContainer: 'imageware', flWidth: '400px', flHeight: '450px', flVer: '6.0.0' , flBgColour: '#ffffff'
 	  	}, 
 	  	{
-		  	invtname: 	document.getElementById('tag-invtname<venda_invtuuid>').innerHTML,
-		  	redirect: 	document.getElementById('tag-redirect<venda_invtuuid>').innerHTML,
-		  	loadmessage: 	document.getElementById('tag-lightboxloadmessage<venda_invtuuid>').innerHTML
+		  	invtname: 	document.getElementById('tag-invtname').innerHTML,
+		  	redirect: 	document.getElementById('tag-redirect').innerHTML,
+		  	loadmessage: 	document.getElementById('tag-lightboxloadmessage').innerHTML
 	});
 }
 <venda_tpcomment>// END - javascript for lightbox</venda_tpcomment>
@@ -90,7 +75,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 			drag: false, modal: true, fixedCenter: true, fade: 0.24, x:xPos
 	  	}, 
 	  	{
-		  	loadmessage: 	document.getElementById('tag-loadmessage<venda_invtuuid>').innerHTML
+		  	loadmessage: 	document.getElementById('tag-loadmessage').innerHTML
 		});
 }
 <venda_tpcomment>// END - javascript for tell a friend, emwbis, write and read a review</venda_tpcomment>
@@ -99,15 +84,15 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 <venda_tpcomment><!-- div id 'invt_popup' is used to show the Tell A Friend, Write A Review, Read A Review and Email Me When Back In Stock features in a popup div --></venda_tpcomment>
 <div id="invt_popup"></div>
 
-<div class="productset-productdetail">
+<div id="productdetail">
 	<!-- start product detail col1 -->
-	<div class="productset-productdetail-col1" style="border:1px solid blue;">
+	<div class="productdetail-col1">
 		<div class="invtmedia" id="image_<venda_invtuuid>">
-			<div id="productdetail-image<venda_invtuuid>"><venda_block label=223,chkatt=null><venda_inctemplate name=Scene7medium,type=includes/Scene7></venda_block label=223></div>
-			<div id="productdetail-altview<venda_invtuuid>"></div>
+			<div id="productdetail-image"><venda_block label=223,chkatt=null><venda_inctemplate name=Scene7medium,type=includes/Scene7></venda_block label=223></div>
+			<div id="productdetail-altview"></div>
 		</div>
 
-		<div id="productdetail-viewlarge<venda_invtuuid>" class="enlarge">
+		<div id="productdetail-viewlarge" class="enlarge">
 		<venda_inctemplate name=Scene7large,type=includes/Scene7>
 		</div>
 
@@ -152,68 +137,27 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		<venda_tpxt mode=set,name=invtref,value=<venda_invtref>>
 	</div>
 	<!-- end product detail col1 -->
-
-       <!-- start product detail col2 -->
-	<div  class="productset-productdetail-col2" style="border:1px solid blue;">
-		<h1 id="comp-name<venda_invtuuid>"><venda_invtname></h1>
-		<venda_tpcomment><!-- Apply YUI tab to "productdetail-tab-<venda_invtref>" --></venda_tpcomment>
-		<script type="text/javascript">
-			var productTab = new YAHOO.widget.TabView("productdetail-tab-<venda_invtref>");
-		</script> 
-		<style type="text/css">
-			 .yui-nav li#desctab a {width:115px!important;margin-right:0px!important;}
-			 .yui-nav li#reviewtab a {width:115px!important;margin-left:0px!important;}
-			 .yui-nav li#sizetab a {width:115px!important;}
-			 .yui-nav li#sizetab.selected a {background:url(<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bg_tab2.gif) no-repeat 0 0!important;}
-		</style>
-		<div id="productdetail-tab-<venda_invtref>">
-			<ul class="yui-nav">
-				<li id="desctab" class="selected"><a href="#desc" title="<venda_text id=site.product.detail.contact.detail>"><venda_text id=site.product.detail.contact.detail></a></li>
-				<venda_block label=2901,invtivtype=apparel,invtivtype=shoes,invtivtype=home,invtivtype=accessories,invtivtype=wallpaper,operator=or>
-<li id="sizetab"><a href="#sizeguide" title="<venda_text id=site.product.size.guide>"><venda_text id=site.product.size.guide></a></li>
-</venda_block label=2901>
-				<li id="reviewtab"><a href="#reviews" title="<venda_text id=site.product.detail.review>"><venda_text id=site.product.detail.review></a></li>
-			</ul>            
-			<div class="yui-content">
-				<div class="desc">
-                	<venda_block label=830,invtivtype=apparel><p><venda_text id=site.product.detail.size.relevant></p></venda_block label=830>
-					<venda_block label=12,invtdesc1=notnull><p class="invtdesc1"><venda_invtdesc1></p></venda_block label=12>
-					<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
-					<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
-					<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
-					<p style="margin-top:10px;"><a href="<venda_dispview invt=<venda_invtref>>&temp=returnspopup&layout=empty" target="_blank" title="<venda_text id=site.product.detail.delivery.return>" rel="popup console 650 750"><venda_text id=site.product.detail.delivery.return></a></p>
-					<p class="sku"><venda_text id=site.product.detail.style><venda_invtref></p>
-					
-				</div>
-				<venda_block label=2900,invtivtype=home,invtivtype=apparel,invtivtype=shoes,invtivtype=accessories,invtivtype=wallpaper,operator=or>
-				<div class="sizeguide">
-				<venda_block label=2120,invtivtype=home><venda_page page=home_size_guide></venda_block label=2120>
-				<venda_block label=2121,invtivtype=apparel><venda_page page=apparel_size_guide></venda_block label=2121>
-				<venda_block label=2122,invtivtype=shoes><venda_page page=shoe_size_guide></venda_block label=2122>
-				<venda_block label=2123,invtivtype=accessories><venda_page page=access_size_guide></venda_block label=2123>
-        <venda_block label=2124,invtivtype=wallpaper><p style="font-size: 1.1em; padding: 20px 11px;"><venda_text id=site.product.size.guide.wallpaper></p></venda_block label=2124>
-				</div>
-				</venda_block label=2900>
-				<div class="reviews">
-					<div id="BVReviewsContainer"></div>
-					<venda_block label=913,mode=value,<venda_islive>=1>
-						<noscript><iframe src="http://reviews.anthropologie.eu/<venda_tpxt mode=get,name=bvcode<venda_sessionlanguage>>/<venda_invtref>/reviews.htm?format=noscript" width="100%"></iframe></noscript>
-					</venda_block label=913>
-					<venda_block label=914,mode=value,<venda_islive>!=1>
-						<noscript><iframe src="http://reviews.anthropologie.uat.venda.com/bvstaging/<venda_tpxt mode=get,name=bvcode<venda_sessionlanguage>>/<venda_invtref>/reviews.htm?format=noscript" width="100%"></iframe></noscript>
-					</venda_block label=914>
-					<div id="noReview"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-       <!-- end product detail col4 -->
-	
-	<!-- start product detail col3 -->
-	<div  class="productset-productdetail-col3" style="border:1px solid blue;">
+	<!-- start product detail col2 -->
+	<div class="productdetail-col2">
 		<venda_tpcomment><!-- product cycling --></venda_tpcomment>
 		<venda_category temp=product_cycling,rec=icat,ref=<venda_curcatref>,itemsperpage=100>
-				
+		<script type="text/javascript">
+		<venda_tpcomment>// START - javascript for product cycling. Please remove if not needed </venda_tpcomment>
+		<venda_tpcomment>// see /venda-support/js/Venda/Widget/ProductCycling.js for usage details</venda_tpcomment>
+		if (typeof Venda.Widget.ProductCycling != "undefined" || Venda.Widget.ProductCycling) {
+			Venda.Widget.ProductCycling.create( 
+				{
+					curinvtref: 	document.getElementById('tag-invtref').innerHTML,
+					allrefs:		document.getElementById('tag-allrefs').innerHTML
+			});
+		}
+		<venda_tpcomment>// END - javascript for product cycling</venda_tpcomment>
+		</script>
+		<venda_tpcomment><!-- buttons to cycle through items in same category --></venda_tpcomment>
+		<div id="buttons"><a href="<venda_dispview icat=<venda_curcatref>>" id="previousInvt" class="left"><venda_text id=site.product_detail.product_cycling.previous></a><a href="<venda_dispview icat=<venda_curcatref>>" id="nextInvt" class="right"><venda_text id=site.product_detail.product_cycling.next></a></div>
+
+		<h1 id="comp-name<venda_invtref>"><venda_invtname></h1>
+		
 		<venda_tpcomment><!-- BAZAAR VOICE REVIEW'S RATING START--></venda_tpcomment>
 		<div id="BVCustomerRatings"></div>
 		<venda_tpcomment><!-- BAZAAR VOICE REVIEW'S RATING END--></venda_tpcomment>
@@ -257,7 +201,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		<venda_block label=17,invtwas=notnull><p class="was">...<venda_text id=site.was><span><venda_currsym><venda_invtwas></span></p></venda_block label=17>
 		<venda_block label=18,invtsavingonwas=notnull><p class="save"><venda_text id=site.save><span><venda_currsym><venda_invtsavingonwas></span></p></venda_block label=18>
 		</venda_block label=16>
-		<venda_inctemplate name=alternateview_productset_script,type=invt>
+		<venda_inctemplate name=alternateview_script,type=invt>
 
 		<venda_block label=200,chkatt=notnull>
 		<!-- if product does have attributes -->
@@ -290,14 +234,14 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 				<venda_block label=121,selatt1=notnull>
 				<div class="swatch1" >
 				<div class="label-att1"><venda_text id=site.product.detail.attribute.colour2></div>
-				<div id="productdetail-swatch<venda_invtuuid>"><div id="productdetail-att1<venda_invtuuid>"></div></div>
+				<div id="productdetail-swatch"><div id="productdetail-att1"></div></div>
 				</div>
 				</venda_block label=121>
 				
 				<venda_block label=122,selatt2=notnull>
 				<div class="swatch2" style="display:none;">
 				<div class="label-att2"><venda_text id=site.product.detail.attribute.size2></div>
-				<div id="productdetail-att2<venda_invtuuid>"></div>
+				<div id="productdetail-att2"></div>
 				</div>
 				</venda_block label=122>
 			</div>
@@ -469,7 +413,56 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 
 </venda_block label=30>
 		
-		
+		<venda_tpcomment><!-- Apply YUI tab to "productdetail-tab" --></venda_tpcomment>
+		<script type="text/javascript">
+			var productTab = new YAHOO.widget.TabView("productdetail-tab");
+		</script> 
+		<style type="text/css">
+			#productdetail #productdetail-tab .yui-nav li#desctab a {width:115px!important;margin-right:0px!important;}
+			#productdetail #productdetail-tab .yui-nav li#reviewtab a {width:115px!important;margin-left:0px!important;}
+			#productdetail #productdetail-tab .yui-nav li#sizetab a {width:115px!important;}
+			#productdetail #productdetail-tab .yui-nav li#sizetab.selected a {background:url(<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bg_tab2.gif) no-repeat 0 0!important;}
+		</style>
+		<div id="productdetail-tab">
+			<ul class="yui-nav">
+				<li id="desctab" class="selected"><a href="#desc" title="<venda_text id=site.product.detail.contact.detail>"><venda_text id=site.product.detail.contact.detail></a></li>
+				<venda_block label=2901,invtivtype=apparel,invtivtype=shoes,invtivtype=home,invtivtype=accessories,invtivtype=wallpaper,operator=or>
+<li id="sizetab"><a href="#sizeguide" title="<venda_text id=site.product.size.guide>"><venda_text id=site.product.size.guide></a></li>
+</venda_block label=2901>
+				<li id="reviewtab"><a href="#reviews" title="<venda_text id=site.product.detail.review>"><venda_text id=site.product.detail.review></a></li>
+			</ul>            
+			<div class="yui-content">
+				<div class="desc">
+                	<venda_block label=830,invtivtype=apparel><p><venda_text id=site.product.detail.size.relevant></p></venda_block label=830>
+					<venda_block label=12,invtdesc1=notnull><p class="invtdesc1"><venda_invtdesc1></p></venda_block label=12>
+					<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
+					<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
+					<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
+					<p style="margin-top:10px;"><a href="<venda_dispview invt=<venda_invtref>>&temp=returnspopup&layout=empty" target="_blank" title="<venda_text id=site.product.detail.delivery.return>" rel="popup console 650 750"><venda_text id=site.product.detail.delivery.return></a></p>
+					<p class="sku"><venda_text id=site.product.detail.style><venda_invtref></p>
+					
+				</div>
+				<venda_block label=2900,invtivtype=home,invtivtype=apparel,invtivtype=shoes,invtivtype=accessories,invtivtype=wallpaper,operator=or>
+				<div class="sizeguide">
+				<venda_block label=2120,invtivtype=home><venda_page page=home_size_guide></venda_block label=2120>
+				<venda_block label=2121,invtivtype=apparel><venda_page page=apparel_size_guide></venda_block label=2121>
+				<venda_block label=2122,invtivtype=shoes><venda_page page=shoe_size_guide></venda_block label=2122>
+				<venda_block label=2123,invtivtype=accessories><venda_page page=access_size_guide></venda_block label=2123>
+        <venda_block label=2124,invtivtype=wallpaper><p style="font-size: 1.1em; padding: 20px 11px;"><venda_text id=site.product.size.guide.wallpaper></p></venda_block label=2124>
+				</div>
+				</venda_block label=2900>
+				<div class="reviews">
+					<div id="BVReviewsContainer"></div>
+					<venda_block label=913,mode=value,<venda_islive>=1>
+						<noscript><iframe src="http://reviews.anthropologie.eu/<venda_tpxt mode=get,name=bvcode<venda_sessionlanguage>>/<venda_invtref>/reviews.htm?format=noscript" width="100%"></iframe></noscript>
+					</venda_block label=913>
+					<venda_block label=914,mode=value,<venda_islive>!=1>
+						<noscript><iframe src="http://reviews.anthropologie.uat.venda.com/bvstaging/<venda_tpxt mode=get,name=bvcode<venda_sessionlanguage>>/<venda_invtref>/reviews.htm?format=noscript" width="100%"></iframe></noscript>
+					</venda_block label=914>
+					<div id="noReview"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<venda_block label=1234,mode=value,<venda_htxt mode=get,name=accessory>=notnull>
 	<script type="text/javascript">
@@ -564,4 +557,10 @@ function getSupplyid(){
 //-->
 </script>
  <!-- End Reviews -->
+
 <venda_tpcomment><!-- BAZAAR VOICE REVIEW INTEGRATION END--></venda_tpcomment>
+
+<venda_inctemplate name=cmDisplayShop5s,type=includes/tracking/coremetrics>
+
+<venda_extflds hideempty=0,realseq=0,template=pdxtdisplay,pdxtsetproducts,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+

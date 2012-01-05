@@ -1,0 +1,93 @@
+<script type="text/javascript">
+<!--
+<venda_tpcomment>
+// START - javascript for alternative view images configuration that the name of configuration is specified through the first parameter
+// - configObjArea to define the element IDs used for showing images
+// - configDefault to define tag values used for general things
+// - configImageware to define tag values used for imageware popup (pdxtimageware is ticked)
+// - configAlternateView to define tag values and behavior
+// - configPopupPanel to define tag values used for lightbox panel when view lare image link is clicked
+</venda_tpcomment>
+	
+	Venda.ProductDetail.init("configObjArea",{
+		objDropdown: document.form.att1,
+		objDefaultImage: document.multi,
+		objProduct: getProduct('<venda_invtuuid>'),
+		objMediumArea: (document.getElementById("productdetail-image")) ? document.getElementById("productdetail-image") : "",
+		objLinkArea: (document.getElementById("productdetail-viewlarge")) ? document.getElementById("productdetail-viewlarge") : "",
+		objSwatchArea: document.getElementById("productdetail-swatch"),
+		objAlternateViewArea: (document.getElementById("productdetail-altview")) ? document.getElementById("productdetail-altview") : ""
+	});
+	
+	Venda.ProductDetail.init("configDefault",{
+		productName: "<venda_invtname>",
+		mediumAltText: "<venda_invtname>",
+		mediumTitleText: "<venda_text id=site.product_detail.main_image.title_text>",
+		viewLargeTitle: "<venda_text id=site.product_detail.view_large_image.title>",
+		viewLargeText: "<venda_text id=site.product_detail.view_large_image>",
+		downloadText: "<venda_text id=site.product_detail.download_image>",
+		largeNotAvailAltText: "<venda_text id=site.product_detail.viewlarge.unavailable_alt>",
+		swatchTitle: "<venda_invtname>",
+		loadingImage: "<div id=\"loadingMain\"><img src=\"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading.gif\"></div>",
+		noImage: {
+			medium: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/spacer_m.gif"
+		}
+	});
+	
+	Venda.ProductDetail.init("configImageware",{
+		enableImageware: "<venda_pdxtimageware>",
+		zoomableText: "<venda_text id=site.product_detail.zoomable_image>",
+		zoomableImagelink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_img2\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">",
+		zoomableTextlink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_link2\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">"
+	});
+	
+	Venda.ProductDetail.init("configAlternateView",{
+		alternateViewPagedStyle: "image",
+		alternateViewBehavior: "onClick",
+		alternateViewAltText: "<venda_text id=site.product_detail.alternateview.alt_text>",
+		alternateViewTitleText: "<venda_text id=site.product_detail.alternateview.title_text>",
+		alternateViewHeaderText: "<venda_text id=site.product_detail.alternateview.header_text>"
+	});
+	
+	Venda.ProductDetail.init("configPopupPanel",{
+		popupHeader: "<venda_invtname>",
+		loadingHeader: "<venda_text id=site.product_detail.enlarge_panel.loading_header_text>",
+		loadingPanel: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading_bar.gif",
+		closePanel: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/popup_hd_bt_close.gif",
+		closePanelTitle: "<venda_text id=site.product_detail.enlarge_panel.close_image_title>",
+		closeTextLink: "<venda_text id=site.product_detail.enlarge_panel.close_window_textlink>"
+	});
+	<venda_tpcomment>// END - javascript for all initial value </venda_tpcomment>
+	
+	<venda_tpcomment>// Declare a protocol and a collection of slot (depended on product type) which also use on 'attribute_collection'</venda_tpcomment>
+	<venda_block label=10,mode=value,<venda_protocol>=http>var protocol = "http://";</venda_block label=10>
+	<venda_block label=11,mode=value,<venda_protocol>=https>var protocol = "https://";</venda_block label=11>
+	<venda_block label=20,invtivtype!=apparel,invtivtype!=shoes,invtivtype!=accessories,invtivtype!=home,invtivtype!=family>var slot = ["_a","_b","_c","_d","_f","_g","_h","_j","_m","_u","_v","_e","_p","_b1","_c1"];</venda_block label=20>
+	<venda_block label=21,invtivtype=apparel>var slot = ["_b","_c","_d","_e","_b1","_c1"];</venda_block label=21>
+	<venda_block label=22,invtivtype=shoes>var slot = ["_b","_c","_g","_h","_u","_e"];</venda_block label=22>
+	<venda_block label=23,invtivtype=accessories>var slot = ["_b","_c","_m","_e"];</venda_block label=23>
+	<venda_block label=24,invtivtype=home,invtivtype=family,invtivtype=familyset,operator=or>var slot = ["_b","_c","_d","_g","_h","_m","_f","_p","_e"];</venda_block label=24>
+
+	<venda_block label=200,chkatt=null>
+	var sizeXS = [];
+	var sizeM = [];
+	var sizeL = [];
+	
+	// used for keeping an image size for all attribute colour
+	for(var i = 0; i < slot.length; i++) {
+		sizeXS.push(protocol+"s7ondemand1.scene7.com/is/image/Anthropologie/<venda_invtsuplsku>+"_"+<venda_pdxtdefaultimg>"+slot[i]+"?$uk_pdt_thumb$");
+		sizeM.push(protocol+"s7ondemand1.scene7.com/is/image/Anthropologie/<venda_invtsuplsku>+"_"+<venda_pdxtdefaultimg>"+slot[i]+"?$uk_pdt_medium$");
+		sizeL.push(protocol+"s7ondemand1.scene7.com/is/image/Anthropologie/<venda_invtsuplsku>+"_"+<venda_pdxtdefaultimg>"+slot[i]+"?$uk-zoom-5x$");
+	}
+		
+	Venda.ProductDetail.loadImage("",{
+		setxsalt: sizeXS,
+		setmalt: sizeM,
+		setlalt: sizeL,
+		clicked: [false, false, false, false, false, false]
+	});
+
+	Venda.ProductDetail.changeAlternateViewSet({attValue:"",no:0});
+	</venda_block label=200>
+// -->
+</script>
