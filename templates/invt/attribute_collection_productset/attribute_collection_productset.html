@@ -24,9 +24,9 @@ for (var obj in attributeData<venda_invtref>) {
 	
 		// used for keeping an image size for all attribute colour
 		for(var i = 0; i < slot.length; i++) {
-			sizeXS.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtatrsku>[obj].detail.atrsuplsku+slot[i]+"?$uk_pdt_thumb$");
-			sizeM.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtatrsku>[obj].detail.atrsuplsku+slot[i]+"?$uk_pdt_medium$");
-			sizeL.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtatrsku>[obj].detail.atrsuplsku+slot[i]+"?$uk-zoom-5x$");
+			sizeXS.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtref>[obj].detail.atrsuplsku+slot[i]+"?$uk_pdt_thumb$");
+			sizeM.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtref>[obj].detail.atrsuplsku+slot[i]+"?$uk_pdt_medium$");
+			sizeL.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtref>[obj].detail.atrsuplsku+slot[i]+"?$uk-zoom-5x$");
 		}
 		
 		var data = prodDetail<venda_invtref>.findExistingElement(params,attributeData<venda_invtref>[obj].attr.att1);
