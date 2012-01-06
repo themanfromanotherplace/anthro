@@ -12,7 +12,7 @@
 	//var prodDetail<venda_invtref> = new MultiProductDetailClass(); - thie is decalred in /templates/invt/productdetail_productset
 	
 	prodDetail<venda_invtref>.init("configObjArea",{
-		objDropdown: document.form.att1,
+		objDropdown: document.form<venda_invtref>.att1,
 		objDefaultImage: document.multi,
 		objProduct: getProduct('<venda_invtuuid>'),
 		objMediumArea: (document.getElementById("productdetail-image<venda_invtref>")) ? document.getElementById("productdetail-image<venda_invtref>") : "",

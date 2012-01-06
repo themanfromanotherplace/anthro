@@ -22,7 +22,7 @@
 
 <venda_block label=792,mode=value,<venda_islive>!=1>document.domain='venda.com';</venda_block label=792>
 
-function ratingsDisplayed(totalReviewsCount, avgRating, ratingsOnlyReviewCount, recommendPercentage, productID)
+function ratingsDisplayed<venda_invtref>(totalReviewsCount, avgRating, ratingsOnlyReviewCount, recommendPercentage, productID)
 {
     if (totalReviewsCount == 0) {
 		jQuery("#BVReviewsContainer<venda_invtref>").hide();
@@ -53,7 +53,9 @@ function ratingsDisplayed(totalReviewsCount, avgRating, ratingsOnlyReviewCount, 
 <div id="tag-loadmessage<venda_invtref>" style="display:none;"><venda_text id=site.loadmessage></div>
 
 <script type="text/javascript">
-var prodDetail<venda_invtref>.panelWidth = "511";
+var prodDet<venda_invtref> = new MultiProductDetailClass();
+	
+	prodDetail<venda_invtref>.panelWidth = "511";
 
 <venda_tpcomment>// START - javascript for tell a friend, emwbis, write and read a review. Please remove if not needed </venda_tpcomment>
 <venda_tpcomment>//  see /venda-support/js/Venda/Widget/InvtPopup.js for usage details</venda_tpcomment>
