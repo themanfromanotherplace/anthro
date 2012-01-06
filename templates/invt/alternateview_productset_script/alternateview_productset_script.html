@@ -78,7 +78,7 @@
 	prodAttSwa<venda_invtatrsku>.setProductDetailInstance(prodDetail<venda_invtatrsku>); // connect the swatch to the product object
 	
 	prodAttSwa<venda_invtatrsku>.init({
-		formHTMLObject: document.form<venda_invtref> // form for product swatch should be unique for each product...
+		formHTMLObject: document.form<venda_invtatrsku> // form for product swatch should be unique for each product...
 	});
 	
 	prodAttSwa<venda_invtatrsku>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
