@@ -1,3 +1,4 @@
+
 <venda_tpcomment><!-- BAZAAR VOICE: initial javascript/css --></venda_tpcomment>
 <venda_tpcomment><!-- set tpxt for bvcode --></venda_tpcomment>
 <venda_tpxt mode=set,name=bvcodeen,value=5310-en_gb><venda_tpxt mode=set,name=bvcodede,value=5310-de_de>
@@ -43,11 +44,7 @@ function ratingsDisplayed(totalReviewsCount, avgRating, ratingsOnlyReviewCount, 
 <div id="tag-loadmessage" style="display:none;"><venda_text id=site.loadmessage></div>
 
 <script type="text/javascript">
-
-var prodDetail<venda_invtatrsku> = new MultiProductDetailClass();
-
-prodDetail<venda_invtatrsku>.panelWidth = "511";
-
+Venda.ProductDetail.panelWidth = "511";
 <venda_tpcomment>// START - javascript for lightbox. Please remove if not needed </venda_tpcomment>
 <venda_tpcomment>// see /venda-support/js/Venda/Widget/LightBox.js for usage details</venda_tpcomment>
 if (typeof Venda.Widget.Lightbox != "undefined" || Venda.Widget.Lightbox) {
@@ -562,5 +559,7 @@ function getSupplyid(){
 
 <venda_inctemplate name=cmDisplayShop5s,type=includes/tracking/coremetrics>
 
+
+<venda_tpcomment><!-- START PRODUCT FAMILY OR OUTFIT - MULTIPLE PRODUCTS --></venda_tpcomment>
 <venda_extflds hideempty=0,realseq=0,template=pdxtdisplay,pdxtsetproducts,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
 

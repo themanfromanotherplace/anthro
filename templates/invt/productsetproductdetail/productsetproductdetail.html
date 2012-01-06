@@ -102,12 +102,12 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 <div class="productset-productdetail">
 	<!-- start product detail col1 -->
 	<div class="productset-productdetail-col1" style="border:1px solid blue;">
-		<div class="invtmedia" id="image_<venda_invtuuid>">
-			<div id="productdetail-image<venda_invtuuid>"><venda_block label=223,chkatt=null><venda_inctemplate name=Scene7medium,type=includes/Scene7></venda_block label=223></div>
-			<div id="productdetail-altview<venda_invtuuid>"></div>
+		<div class="invtmedia" id="image<venda_invtatrsku>">
+			<div id="productdetail-image<venda_invtatrsku>"><venda_block label=223,chkatt=null><venda_inctemplate name=Scene7medium,type=includes/Scene7></venda_block label=223></div>
+			<div id="productdetail-altview<venda_invtatrsku>"></div>
 		</div>
 
-		<div id="productdetail-viewlarge<venda_invtuuid>" class="enlarge">
+		<div id="productdetail-viewlarge<venda_invtatrsku>" class="enlarge">
 		<venda_inctemplate name=Scene7large,type=includes/Scene7>
 		</div>
 
@@ -158,7 +158,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		<h1 id="comp-name<venda_invtuuid>"><venda_invtname></h1>
 		<venda_tpcomment><!-- Apply YUI tab to "productdetail-tab-<venda_invtref>" --></venda_tpcomment>
 		<script type="text/javascript">
-			var productTab = new YAHOO.widget.TabView("productdetail-tab-<venda_invtref>");
+			var productTab = new YAHOO.widget.TabView("productdetail-tab");
 		</script> 
 		<style type="text/css">
 			 .yui-nav li#desctab a {width:115px!important;margin-right:0px!important;}
@@ -261,11 +261,11 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 
 		<venda_block label=200,chkatt=notnull>
 		<!-- if product does have attributes -->
-		<script type="text/javascript">var attributeData = new Array(); //collection of attributes used for Scene7</script>
-		<venda_inctemplate name=attribute_detblocks,type=invt/attributes>
-		<venda_inctemplate name=attribute_scripts,type=invt/attributes>
-		<venda_mediagrid template=alternateview_grid>
-		<venda_inctemplate name=attribute_collection,type=invt>
+		<script type="text/javascript">var attributeData<venda_invtatrsku> = new Array(); //collection of attributes used for Scene7</script>
+		<venda_inctemplate name=attribute_detblocks_productset,type=invt/attributes>
+		<venda_inctemplate name=attribute_scripts_productset,type=invt/attributes>
+		<venda_mediagrid template=alternateview_grid_productset>
+		<venda_inctemplate name=attribute_collection_productset,type=invt>
 
 		<!-- Attribute Swatch: add Attribute Price, remove old attribute price div -->
 		<script type="text/javascript">

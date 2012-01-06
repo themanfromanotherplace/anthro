@@ -1,0 +1,47 @@
+<script type="text/javascript">
+<!--
+var product<venda_invtatrsku> = getProduct('<venda_invtref>');
+product<venda_invtatrsku>.setAttributeNames(
+    {
+        att1: '<venda_att1>',
+        att2: '<venda_att2>',
+        att3: '<venda_att3>',
+        att4: '<venda_att4>'
+    }
+);
+<venda_detail_attributeChanges>
+<venda_detail_attribute>
+
+product<venda_invtatrsku>.setLabels(
+  {
+    currsym: '<venda_invtcurrsym>',
+    default_atrwas: '<venda_text id=site.product_detail.attribute.extrafields.parent_was_text> ',
+    default_atrsell: '<venda_text id=site.product_detail.attribute.extrafields.parent_sale_text> ',
+    default_atrsaving: '<venda_text id=site.product_detail.attribute.extrafields.parent_saving_text> ',
+    default_atrmsrp: '<venda_text id=site.product_detail.attribute.extrafields.parent_msrp_text> ',
+    atrwas: '<venda_text id=site.product_detail.attribute.extrafields.attr_was_text> ',
+    atrsell: '<venda_text id=site.product_detail.attribute.extrafields.attr_sale_text> ',
+    atrsaving: '<venda_text id=site.product_detail.attribute.extrafields.attr_saving_text> ',
+    atrmsrp: '<venda_text id=site.product_detail.attribute.extrafields.attr_msrp_text> '
+  }
+);
+
+getProduct('<venda_invtref>').registerElement(
+{id: 'PriceDiv_<venda_invtref>', type: 'atrsell'},
+{id: 'wasDiv_<venda_invtref>', type: 'atrwas'}
+);
+var product<venda_invtatrsku> = getProduct('<venda_invtref>');
+<venda_block label=230,selatt1=notnull>
+product<venda_invtatrsku>.registerElement( { type: 'att1',id: 'att1_<venda_invtref>' } );
+</venda_block label=230>
+<venda_block label=231,selatt2=notnull> 
+product<venda_invtatrsku>.registerElement( { type: 'att2',id: 'att2_<venda_invtref>' } );
+</venda_block label=231>
+<venda_block label=232,selatt3=notnull> 
+product<venda_invtatrsku>.registerElement( { type: 'att3',id: 'att3_<venda_invtref>' } );
+</venda_block label=232>
+<venda_block label=233,selatt4=notnull>
+product<venda_invtatrsku>.registerElement( { type: 'att4',id: 'att4_<venda_invtref>' } );
+</venda_block label=233>
+// -->
+</script>

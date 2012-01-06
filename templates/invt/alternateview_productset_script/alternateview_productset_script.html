@@ -52,7 +52,7 @@
 		alternateViewHeaderText: "<venda_text id=site.product_detail.alternateview.header_text>"
 	});
 	
-	prodDetail<venda_invtatrsku>.ProductDetail.init("configPopupPanel",{
+	prodDetail<venda_invtatrsku>.init("configPopupPanel",{
 		popupHeader: "<venda_invtname>",
 		loadingHeader: "<venda_text id=site.product_detail.enlarge_panel.loading_header_text>",
 		loadingPanel: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading_bar.gif",
@@ -66,7 +66,7 @@
 	//could add all required objects on init function?? or in constructor
 	//new instance of prod manager for the whole page
 	//DO NOT CHANGE THIS VAR AS ITS USED IN OTHER FILES
-	var productManager = new MultiProductDetailManager();
+	//var productManager = new MultiProductDetailManager();
 	
 	//register a product instance
 	productManager.addProductObject(prodDetail<venda_invtatrsku>);
@@ -117,14 +117,14 @@
 		sizeL.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>+"_"+<venda_pdxtdefaultimg>"+slot[i]+"?$uk-zoom-5x$");
 	}
 		
-	Venda.ProductDetail.loadImage("",{
+	prodDetail<venda_invtatrsku>.loadImage("",{
 		setxsalt: sizeXS,
 		setmalt: sizeM,
 		setlalt: sizeL,
 		clicked: [false, false, false, false, false, false]
 	});
 
-	Venda.ProductDetail.changeAlternateViewSet({attValue:"",no:0});
+	prodDetail<venda_invtatrsku>.changeAlternateViewSet({attValue:"",no:0});
 	</venda_block label=200>
 // -->
 </script>
