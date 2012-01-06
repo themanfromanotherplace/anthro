@@ -1,0 +1,35 @@
+<venda_detblock_minify_js>
+<script type="text/javascript" src="<venda_supportdir>/js/Venda.js"></script>
+<script type="text/javascript" src="<venda_supportdir>/js/Venda/Platform.js"></script>
+<venda_tpcomment><!-- These TPXT's can eventually be removed when we no longer use the elxts in the current JS element --></venda_tpcomment><venda_block label=20,invtref=notnull><venda_tpxt mode=set,name=menuinvtref,value=<venda_invtref>></venda_block label=20><venda_block label=21,icatref=notnull><venda_tpxt mode=set,name=menuicatref,value=<venda_icatref>></venda_block label=21><venda_category rec=elementcat,ref=js,temp=elementlist_nodiv><venda_block label=19812,pageref=home><venda_category rec=elementcat,ref=js_home,temp=elementlist_nodiv></venda_block label=19812><venda_block label=19813,mode=value,<venda_tpxt mode=get,name=track>=productlist><venda_category rec=elementcat,ref=js_productlist,temp=elementlist_nodiv><venda_block label=150,mode=value,<venda_setting type=ebiz,name=powerreviews>=1>
+<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script>
+</venda_block label=150><venda_block label=151,mode=value,<venda_setting type=ebiz,name=showsearchgridlistview>=1,<venda_setting type=ebiz,name=showprodgridlistview>=1,operator=or>
+<script type="text/javascript" src="/venda-support/js/Venda/Widget/styleswitcher.js"></script></venda_block label=151></venda_block label=19813><venda_block label=19814,mode=value,<venda_tpxt mode=get,name=track>=categorylist><venda_category rec=elementcat,ref=js_categorylist,temp=elementlist_nodiv></venda_block label=19814>
+<venda_block label=19815,invtref=notnull><venda_category rec=elementcat,ref=js_productdetail,temp=elementlist_nodiv>
+<venda_block label=152,mode=value,<venda_setting type=ebiz,name=powerreviews>=1>
+<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script></venda_block label=152></venda_block label=19815>
+<venda_tpcomment><!-- Two separate sets of conditions are required for search due to the venda locayta tag being included in a product list template, however the same JS is called --></venda_tpcomment>
+<venda_block label=19816,workflow=locayta><venda_category rec=elementcat,ref=js_search,temp=elementlist_nodiv>
+<venda_block label=153,mode=value,<venda_setting type=ebiz,name=powerreviews>=1>
+<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script>
+</venda_block label=153><venda_block label=154,mode=value,<venda_setting type=ebiz,name=showsearchgridlistview>=1,<venda_setting type=ebiz,name=showprodgridlistview>=1,operator=or>
+<script type="text/javascript" src="/venda-support/js/Venda/Widget/styleswitcher.js"></script></venda_block label=154></venda_block label=19816><venda_block label=19821,mode=value,<venda_tpxt mode=get,name=track>=productlistsearch,<venda_tpxt mode=get,name=track>=categorylistsearch,operator=or><venda_category rec=elementcat,ref=js_search,temp=elementlist_nodiv><venda_block label=155,mode=value,<venda_setting type=ebiz,name=powerreviews>=1>
+<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script>
+</venda_block label=155><venda_block label=156,mode=value,<venda_setting type=ebiz,name=showsearchgridlistview>=1,<venda_setting type=ebiz,name=showprodgridlistview>=1,operator=or>
+<script type="text/javascript" src="/venda-support/js/Venda/Widget/styleswitcher.js"></script></venda_block label=156></venda_block label=19821><venda_block label=19817,pageref!=home,icatref=null,invtref=null><venda_block label=19818,workflow!=locayta><venda_block label=19820,mode=value,<venda_tpxt mode=get,name=track>!=productlistsearch,<venda_tpxt mode=get,name=track>!=categorylistsearch><venda_tpcomment>
+<!-- 
+workflow condition does not work with mode = value so 3 conditions are necessary 
+This section is used for templates not covered above (exluding sitewide) e.g. page,story,giftcert,newsletter
+--></venda_tpcomment><venda_category rec=elementcat,ref=js_other,temp=elementlist_nodiv>
+</venda_block label=19820></venda_block label=19818></venda_block label=19817>
+</venda_detblock_minify_js>
+<venda_detail_minify_js>
+
+<!--[if lt IE 7.]>
+		<script defer type="text/javascript" src="<venda_supportdir>/js/pngfix.js"></script>
+<![endif]-->
+<script type="text/javascript">
+   var swapImage = function(name, imagesrc) {
+      document.images[name].src = imagesrc;
+   }
+</script>
