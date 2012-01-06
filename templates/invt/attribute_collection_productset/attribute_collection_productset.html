@@ -6,18 +6,18 @@
 */
 </venda_tpcomment>
 var params = [];
-for (var obj in attributeData<venda_invtatrsku>) {
+for (var obj in attributeData<venda_invtref>) {
 	/* Occur on IE ONLY - the 1st value will be 'function' so, it need to put the condition to protect the 1st value ONLY */
-	if (typeof attributeData<venda_invtatrsku>[obj] != "function") {
+	if (typeof attributeData<venda_invtref>[obj] != "function") {
 		var imageURL = "";
 		var sizeXS = [];
 		var sizeM = [];
 		var sizeL = [];
 
-		if (typeof(attributeData<venda_invtatrsku>[obj].attr) == "object"){
-			for (var each in attributeSwatchImage<venda_invtatrsku>) {
-				if (attributeData<venda_invtatrsku>[obj].attr.att1 == attributeSwatchImage<venda_invtatrsku>[each].attr){
-					imageURL = attributeSwatchImage<venda_invtatrsku>[each].imageURL;
+		if (typeof(attributeData<venda_invtref>[obj].attr) == "object"){
+			for (var each in attributeSwatchImage<venda_invtref>) {
+				if (attributeData<venda_invtref>[obj].attr.att1 == attributeSwatchImage<venda_invtref>[each].attr){
+					imageURL = attributeSwatchImage<venda_invtref>[each].imageURL;
 				}
 			}
 		}
@@ -29,7 +29,7 @@ for (var obj in attributeData<venda_invtatrsku>) {
 			sizeL.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>_"+attributeData<venda_invtatrsku>[obj].detail.atrsuplsku+slot[i]+"?$uk-zoom-5x$");
 		}
 		
-		var data = prodDetail<venda_invtatrsku>.findExistingElement(params,attributeData<venda_invtatrsku>[obj].attr.att1);
+		var data = prodDetail<venda_invtref>.findExistingElement(params,attributeData<venda_invtref>[obj].attr.att1);
 		if(data.found) {
 			var prop = params[data.elementId].properties; //just shot hand
 			prop.setxsalt.join(sizeXS);
@@ -37,7 +37,7 @@ for (var obj in attributeData<venda_invtatrsku>) {
 			prop.setlalt.join(sizeL);
 		} else {
 			params.push({
-			colour:attributeData<venda_invtatrsku>[obj].attr.att1,
+			colour:attributeData<venda_invtref>[obj].attr.att1,
 			properties: {
 				setswatch: imageURL,
 				setxsalt: sizeXS,
@@ -51,6 +51,6 @@ for (var obj in attributeData<venda_invtatrsku>) {
 }
 
 for(var i = 0; i < params.length; i++){
-	prodDetail<venda_invtatrsku>.loadImage(params[i].colour,params[i].properties);
+	prodDetail<venda_invtref>.loadImage(params[i].colour,params[i].properties);
 }
 </script>

@@ -9,20 +9,20 @@
 // - configPopupPanel to define tag values used for lightbox panel when view lare image link is clicked
 </venda_tpcomment>
 	
-	//var prodDetail<venda_invtatrsku> = new MultiProductDetailClass(); - thie is decalred in /templates/invt/productdetail_productset
+	//var prodDetail<venda_invtref> = new MultiProductDetailClass(); - thie is decalred in /templates/invt/productdetail_productset
 	
-	prodDetail<venda_invtatrsku>.init("configObjArea",{
+	prodDetail<venda_invtref>.init("configObjArea",{
 		objDropdown: document.form.att1,
 		objDefaultImage: document.multi,
 		objProduct: getProduct('<venda_invtuuid>'),
-		objMediumArea: (document.getElementById("productdetail-image<venda_invtatrsku>")) ? document.getElementById("productdetail-image<venda_invtatrsku>") : "",
-		objLinkArea: (document.getElementById("productdetail-viewlarge<venda_invtatrsku>")) ? document.getElementById("productdetail-viewlarge<venda_invtatrsku>") : "",
-		objSwatchArea: document.getElementById("productdetail-swatch<venda_invtatrsku>"),
-		objAlternateViewArea: (document.getElementById("productdetail-altview<venda_invtatrsku>")) ? document.getElementById("productdetail-altview<venda_invtatrsku>") : "",
-		objProductUniqueId: "<venda_invtatrsku>"
+		objMediumArea: (document.getElementById("productdetail-image<venda_invtref>")) ? document.getElementById("productdetail-image<venda_invtref>") : "",
+		objLinkArea: (document.getElementById("productdetail-viewlarge<venda_invtref>")) ? document.getElementById("productdetail-viewlarge<venda_invtref>") : "",
+		objSwatchArea: document.getElementById("productdetail-swatch<venda_invtref>"),
+		objAlternateViewArea: (document.getElementById("productdetail-altview<venda_invtref>")) ? document.getElementById("productdetail-altview<venda_invtref>") : "",
+		objProductUniqueId: "<venda_invtref>"
 	});
 
-	prodDetail<venda_invtatrsku>.init("configDefault",{
+	prodDetail<venda_invtref>.init("configDefault",{
 		productName: "<venda_invtname>",
 		mediumAltText: "<venda_invtname>",
 		mediumTitleText: "<venda_text id=site.product_detail.main_image.title_text>",
@@ -31,20 +31,20 @@
 		downloadText: "<venda_text id=site.product_detail.download_image>",
 		largeNotAvailAltText: "<venda_text id=site.product_detail.viewlarge.unavailable_alt>",
 		swatchTitle: "<venda_invtname>",
-		loadingImage: "<div id=\"loadingMain<venda_invtatrsku>\"><img src=\"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading.gif\"></div>",
+		loadingImage: "<div id=\"loadingMain<venda_invtref>\"><img src=\"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading.gif\"></div>",
 		noImage: {
 			medium: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/spacer_m.gif"
 		}
 	});
 	
-	prodDetail<venda_invtatrsku>.init("configImageware",{
+	prodDetail<venda_invtref>.init("configImageware",{
 		enableImageware: "<venda_pdxtimageware>",
 		zoomableText: "<venda_text id=site.product_detail.zoomable_image>",
 		zoomableImagelink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_img2\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">",
 		zoomableTextlink: "<a href=\"<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup\" id=\"zoom_link2\" title=\"<venda_text id=site.product_detail.zoomable_image.title>\">"
 	});
 	
-	prodDetail<venda_invtatrsku>.init("configAlternateView",{
+	prodDetail<venda_invtref>.init("configAlternateView",{
 		alternateViewPagedStyle: "image",
 		alternateViewBehavior: "onClick",
 		alternateViewAltText: "<venda_text id=site.product_detail.alternateview.alt_text>",
@@ -52,7 +52,7 @@
 		alternateViewHeaderText: "<venda_text id=site.product_detail.alternateview.header_text>"
 	});
 	
-	prodDetail<venda_invtatrsku>.init("configPopupPanel",{
+	prodDetail<venda_invtref>.init("configPopupPanel",{
 		popupHeader: "<venda_invtname>",
 		loadingHeader: "<venda_text id=site.product_detail.enlarge_panel.loading_header_text>",
 		loadingPanel: "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/loading_bar.gif",
@@ -69,26 +69,26 @@
 	//var productManager = new MultiProductDetailManager();
 	
 	//register a product instance
-	productManager.addProductObject(prodDetail<venda_invtatrsku>);
+	productManager.addProductObject(prodDetail<venda_invtref>);
 	
 	
 	//creat a new product attribute swatch - could be done in product class
-	var prodAttSwa<venda_invtatrsku> = new AttributeSwatchClass();
+	var prodAttSwa<venda_invtref> = new AttributeSwatchClass();
 	
-	prodAttSwa<venda_invtatrsku>.setProductDetailInstance(prodDetail<venda_invtatrsku>); // connect the swatch to the product object
+	prodAttSwa<venda_invtref>.setProductDetailInstance(prodDetail<venda_invtref>); // connect the swatch to the product object
 	
-	prodAttSwa<venda_invtatrsku>.init({
-		formHTMLObject: document.form<venda_invtatrsku> // form for product swatch should be unique for each product...
+	prodAttSwa<venda_invtref>.init({
+		formHTMLObject: document.form<venda_invtref> // form for product swatch should be unique for each product...
 	});
 	
-	prodAttSwa<venda_invtatrsku>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
+	prodAttSwa<venda_invtref>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
 
 
-	prodDetail<venda_invtatrsku>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
-	prodDetail<venda_invtatrsku>.setProductAttributeSwatch(prodAttSwa<venda_invtatrsku>); // connect the swatch to the product object
+	prodDetail<venda_invtref>.productManagerGlobalVariableName = "productManager"; // for inline js calls e.g. onload etc
+	prodDetail<venda_invtref>.setProductAttributeSwatch(prodAttSwa<venda_invtref>); // connect the swatch to the product object
 	
 	
-	var instance = productManager.getProductObjectByUniqueId("<venda_invtatrsku>"); // testing func for global retreival of correct product instance
+	var instance = productManager.getProductObjectByUniqueId("<venda_invtref>"); // testing func for global retreival of correct product instance
 		
 	
 	<venda_tpcomment>// END - javascript for all initial value </venda_tpcomment>
@@ -117,14 +117,14 @@
 		sizeL.push(protocol+"images.anthropologie.eu/is/image/Anthropologie/<venda_invtsuplsku>+"_"+<venda_pdxtdefaultimg>"+slot[i]+"?$uk-zoom-5x$");
 	}
 		
-	prodDetail<venda_invtatrsku>.loadImage("",{
+	prodDetail<venda_invtref>.loadImage("",{
 		setxsalt: sizeXS,
 		setmalt: sizeM,
 		setlalt: sizeL,
 		clicked: [false, false, false, false, false, false]
 	});
 
-	prodDetail<venda_invtatrsku>.changeAlternateViewSet({attValue:"",no:0});
+	prodDetail<venda_invtref>.changeAlternateViewSet({attValue:"",no:0});
 	</venda_block label=200>
 // -->
 </script>
