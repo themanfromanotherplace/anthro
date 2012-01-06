@@ -1,6 +1,6 @@
 <script type="text/javascript">
 <!--
-var product<venda_invtref> = getProduct('<venda_invtref>');
+var product<venda_invtref> = getProduct('<venda_invtuuid>');
 product<venda_invtref>.setAttributeNames(
     {
         att1: '<venda_att1>',
@@ -26,22 +26,22 @@ product<venda_invtref>.setLabels(
   }
 );
 
-getProduct('<venda_invtref>').registerElement(
-{id: 'PriceDiv_<venda_invtref>', type: 'atrsell'},
-{id: 'wasDiv_<venda_invtref>', type: 'atrwas'}
+getProduct('<venda_invtuuid>').registerElement(
+{id: 'PriceDiv_<venda_invtuuid>', type: 'atrsell'},
+{id: 'wasDiv_<venda_invtuuid>', type: 'atrwas'}
 );
-var product<venda_invtref> = getProduct('<venda_invtref>');
+var product<venda_invtref> = getProduct('<venda_invtuuid>');
 <venda_block label=230,selatt1=notnull>
-product<venda_invtref>.registerElement( { type: 'att1',id: 'att1_<venda_invtref>' } );
+product<venda_invtref>.registerElement( { type: 'att1',id: 'att1_<venda_invtuuid>' } );
 </venda_block label=230>
 <venda_block label=231,selatt2=notnull> 
-product<venda_invtref>.registerElement( { type: 'att2',id: 'att2_<venda_invtref>' } );
+product<venda_invtref>.registerElement( { type: 'att2',id: 'att2_<venda_invtuuid>' } );
 </venda_block label=231>
 <venda_block label=232,selatt3=notnull> 
-product<venda_invtref>.registerElement( { type: 'att3',id: 'att3_<venda_invtref>' } );
+product<venda_invtref>.registerElement( { type: 'att3',id: 'att3_<venda_invtuuid>' } );
 </venda_block label=232>
 <venda_block label=233,selatt4=notnull>
-product<venda_invtref>.registerElement( { type: 'att4',id: 'att4_<venda_invtref>' } );
+product<venda_invtref>.registerElement( { type: 'att4',id: 'att4_<venda_invtuuid>' } );
 </venda_block label=233>
 // -->
 </script>
