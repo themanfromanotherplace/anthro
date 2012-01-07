@@ -101,7 +101,7 @@ AttributeSwatchClass.prototype.createListAttributes=function(attrColumn,attrName
 
 AttributeSwatchClass.prototype.displayListAttributes = function (attrColumn, attrName){
 	//change so unique 
-	var str = "<ul class=attributeList_"+attrColumn+" attribute_"+attrColumn+"_"+this.productDetailInstance.configObjArea["objProductUniqueId"]+">";
+	var str = "<ul class=attributeList_"+attrColumn+""+this.productDetailInstance.configObjArea["objProductUniqueId"]+" attribute_"+attrColumn+"_"+this.productDetailInstance.configObjArea["objProductUniqueId"]+">";
 	var chkString = "";
 	
 	for(var i=0; i < this.ListAttributes[attrColumn].length; i++){
