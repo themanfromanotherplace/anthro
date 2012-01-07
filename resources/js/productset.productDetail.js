@@ -124,7 +124,9 @@ MultiProductDetailClass.prototype.checkValidImage = function(attValue) {
 		// replace main image with 'spacer.gif' if alternate image is empty
 		if (jQuery(altDiv).find("img.validImg").length == 0) {	
 			jQuery(mediumDiv+" .jqzoomm").remove();
-			jQuery(mediumDiv+' #loadingMain' + thisProductDetailInstance.configObjArea["objProductUniqueId"]).after('<img src="'+thisProductDetailInstance.configDefault["noImage"]["medium"] + '" style="display:none" onload="var instance = ' + thisProductDetailInstance.productManagerGlobalVariableName + '.getProductObjectByUniqueId("' + thisProductDetailInstance.configObjArea["objProductUniqueId"] + '"); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);">');
+			
+			jQuery(mediumDiv+" #loadingMain" + thisProductDetailInstance.configObjArea["objProductUniqueId"]).after("<img src=\"" + thisProductDetailInstance.configDefault["noImage"]["medium"] + " style=\"display:none\" onload=\"var instance = " + thisProductDetailInstance.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + thisProductDetailInstance.configObjArea["objProductUniqueId"] + "); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);\">");
+			
 			jQuery(largeDiv).hide();
 		} else {
 			jQuery(largeDiv).show();
