@@ -176,7 +176,7 @@ AttributeSwatchClass.prototype.checkAvailAttributes = function(attrColumn,attrVa
 		case "att2": attrColumn="att1";attrColumnSelect="att2";break;
 	}
 	a=0;	
-	var str="<ul class=attributeList_"+attrColumn+" attribute_"+attrColumn+"_"+this.productDetailInstance.configObjArea["objProductUniqueId"]+">";
+	var str= '<ul class="attributeList_' + attrColumn + ' attribute_' + attrColumn + '_' + this.productDetailInstance.configObjArea["objProductUniqueId"] + '">';
 	for (var eachAttrSet in this.productInstance.attributeValues) {
 		if(this.productInstance.attributeValues[eachAttrSet].values[attrColumnSelect]==attrValue && (this.productInstance.attributeValues[eachAttrSet].data["atronhand"]>0)){
 			this.existingAttributes[a] = this.productInstance.attributeValues[eachAttrSet].values[attrColumn]; 
@@ -190,7 +190,7 @@ AttributeSwatchClass.prototype.checkAvailOneAttributes = function(attrColumn, at
 	this.existingAttributes = new Array();
 	this.availAttributes = new Array();
 	a=0;	
-	var str="<ul class=attributeList_"+attrColumn+" attribute_"+attrColumn+"_"+this.productDetailInstance.configObjArea["objProductUniqueId"]+">";
+	var str= '<ul class="attributeList_' + attrColumn + ' attribute_' + attrColumn + '_' + this.productDetailInstance.configObjArea["objProductUniqueId"] + '">';
 	for (var eachAttrSet in this.productInstance.attributeValues) {
 		if(this.productInstance.attributeValues[eachAttrSet].data["atronhand"]>0){
 			this.existingAttributes[a]=this.productInstance.attributeValues[eachAttrSet].values[attrColumn]; 
