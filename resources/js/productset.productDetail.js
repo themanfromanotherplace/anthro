@@ -101,7 +101,7 @@ MultiProductDetailClass.prototype.checkValidImage = function(attValue) {
 	var largeDiv = "#"+jQuery(this.configObjArea["objLinkArea"]).attr("id");
 	var mediumDiv = "#"+jQuery(this.configObjArea["objMediumArea"]).attr("id");
 	var altDiv = "#"+jQuery(this.configObjArea["objAlternateViewArea"]).attr("id");
-	var self = this;
+	var thisProductDetailInstance = this;
 	
 	jQuery(altDiv+" img").hide();
 	jQuery(altDiv+" img").isValidImg({onFinishedValidation:function(){
@@ -115,8 +115,8 @@ MultiProductDetailClass.prototype.checkValidImage = function(attValue) {
 		});
 		
 		// need to call these 2 func. after all images have completely validated
-		self.changeMainImage({attValue:attValue,no:current});
-		self.changeViewLargeLink({attValue:attValue,no:current});
+		thisProductDetailInstance.changeMainImage({attValue:attValue,no:current});
+		thisProductDetailInstance.changeViewLargeLink({attValue:attValue,no:current});
 		
 		// preselect the 1st alternate image by default
 		jQuery(altDiv+" a").eq(current).addClass("selected");
@@ -124,7 +124,7 @@ MultiProductDetailClass.prototype.checkValidImage = function(attValue) {
 		// replace main image with 'spacer.gif' if alternate image is empty
 		if (jQuery(altDiv).find("img.validImg").length == 0) {	
 			jQuery(mediumDiv+" .jqzoomm").remove();
-			jQuery(mediumDiv+" #loadingMain" + self.configObjArea["objProductUniqueId"]).after("<img src=\""+self.configDefault['noImage']['medium']+"\" style=\"display:none\" onload=\"var instance = " + self.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + self.productDetailInstance.configObjArea["objProductUniqueId"] + "); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);\">");
+			jQuery(mediumDiv+' #loadingMain' + thisProductDetailInstance.configObjArea["objProductUniqueId"]).after('<img src="'+thisProductDetailInstance.configDefault["noImage"]["medium"] + '" style="display:none" onload="var instance = ' + thisProductDetailInstance.productManagerGlobalVariableName + '.getProductObjectByUniqueId("' + thisProductDetailInstance.productDetailInstance.configObjArea["objProductUniqueId"] + '"); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);">');
 			jQuery(largeDiv).hide();
 		} else {
 			jQuery(largeDiv).show();
