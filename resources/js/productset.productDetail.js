@@ -579,8 +579,8 @@ MultiProductDetailClass.prototype.preloadAllImage = function() {
 * To select the first colour attribute
 */
 MultiProductDetailClass.prototype.selectFirstAtt = function () {
-	var attValue = jQuery("ul.attribute_att1"+this.configObjArea["objProductUniqueId"]+" li a:first").attr("title");
-	var swId = jQuery("ul.attribute_att1"+this.configObjArea["objProductUniqueId"]+" li a:first").addClass("selected");
+	var attValue = jQuery("ul.attribute_att1_"+this.configObjArea["objProductUniqueId"]+" li a:first").attr("title");
+	var swId = jQuery("ul.attribute_att1_"+this.configObjArea["objProductUniqueId"]+" li a:first").addClass("selected");
 	/*the first att. colour must be selected */
 	this.attributeSwatchInstance.actionSet('att1',attValue);
 	this.changeSet(attValue);
