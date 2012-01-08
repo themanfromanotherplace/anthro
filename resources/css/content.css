@@ -420,8 +420,8 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /* Col 1 = image, Col 2 = description, Col 3 = attributes */
 /**********************************************************/
 .productset-productdetail-col1{float:left; clear:left; width:204px;}
-.productset-productdetail-col2{float:left; clear:none; width:351px;}
-.productset-productdetail-col3{float:left; clear:none; width:200px;}
+.productset-productdetail-col2{float:left; clear:none; width:335px;}
+.productset-productdetail-col3{float:left; clear:none; width:179px;}
  
 .productset-productdetail-col1 .productsetdetail-image .mainImage {height: 217px; width: 145px;}
 
@@ -432,9 +432,10 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 
  
 .productset-productdetail-col2 h2{ 	font-family: "Georgia"; font-size: 1.4em; font-weight: 400;	margin-top: 8px;}
+.productset-productdetail-col2 .productdetail-tab .desc{padding: 15px 11px; color: #666; font-size: 1.1em; }
 .productset-productdetail-col2 .productdetail-tab {clear:both;margin-top:20px;clear:both;width:350px;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav {overflow:hidden;}
-.productset-productdetail-col2 .productdetail-tab .yui-nav li {padding:0;float:left;}
+.productset-productdetail-col2 .productdetail-tab .yui-nav li {padding:0;float:left; width:115px;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav li a {float:left;line-height:27px;text-align:center;text-transform:lowercase;text-decoration:none;font-size:1.2em;font-family:Courier New;font-weight:bold;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav li.desctab a {color:#666;width:141px;height:27px;margin-right:14px;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav li.reviewtab a {color:#333;width:181px;height:27px;margin-left:12px;}
