@@ -83,11 +83,11 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 	<!-- start product detail col1 -->
 	<div class="productset-productdetail-col1" style="border:1px solid blue;">
 		<div class="invtmedia" id="image<venda_invtref>">
-			<div id="productdetail-image<venda_invtref>"><venda_block label=223,chkatt=null><venda_inctemplate name=Scene7medium,type=includes/Scene7></venda_block label=223></div>
-			<div id="productdetail-altview<venda_invtref>"></div>
+			<div class="productsetdetail-image" id="productdetail-image<venda_invtref>"><venda_block label=223,chkatt=null><venda_inctemplate name=Scene7medium,type=includes/Scene7></venda_block label=223></div>
+			<div class="productsetdetail-imageviews" id="productdetail-altview<venda_invtref>"></div>
 		</div>
 
-		<div id="productdetail-viewlarge<venda_invtref>" class="enlarge">
+		<div class="productdetail-viewlarge" id="productdetail-viewlarge<venda_invtref>" class="enlarge">
 		<venda_inctemplate name=Scene7large,type=includes/Scene7>
 		</div>
 
@@ -129,7 +129,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
        <!-- start product detail col2 -->
 	<div  class="productset-productdetail-col2" style="border:1px solid blue;">
 		
-		<h1 id="comp-name<venda_invtref>"><venda_invtname></h1>
+		<h2 id="comp-name<venda_invtref>"><venda_invtname></h2>
 		
 		<venda_tpcomment><!-- Apply YUI tab to "productdetail-tab<venda_invtref>" --></venda_tpcomment>
 		
@@ -146,15 +146,15 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		
 		<div id="productdetail-tab<venda_invtref>">
 			<ul class="yui-nav">
-				<li id="desctab<venda_invtref>" class="selected"><a href="#desc" title="<venda_text id=site.product.detail.contact.detail>"><venda_text id=site.product.detail.contact.detail></a></li>
+				<li id="desctab<venda_invtref>" class="desctab selected"><a href="#desc<venda_invtref>" title="<venda_text id=site.product.detail.contact.detail>"><venda_text id=site.product.detail.contact.detail></a></li>
 				
 				<venda_block label=2901,invtivtype=apparel,invtivtype=shoes,invtivtype=home,invtivtype=accessories,invtivtype=wallpaper,operator=or>
-					<li id="sizetab<venda_invtref>">
+					<li class="sizetab" id="sizetab<venda_invtref>">
 						<a href="#sizeguide" title="<venda_text id=site.product.size.guide>"><venda_text id=site.product.size.guide></a>
 					</li>
 				</venda_block label=2901>
 				
-				<li id="reviewtab<venda_invtref>">
+				<li class="reviewtab" id="reviewtab<venda_invtref>">
 					<a href="#reviews" title="<venda_text id=site.product.detail.review>"><venda_text id=site.product.detail.review></a>
 				</li>
 			</ul>            
