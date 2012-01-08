@@ -1,10 +1,9 @@
 
 
-function MultiProductDetailClass(){
-	
-	this.showMainImage = new showMainImage(this);
-	
-};
+function MultiProductDetailClass(){};
+ 
+
+MultiProductDetailClass.prototype.showMainImage = false;
  
 MultiProductDetailClass.prototype.flighted   = true;  // Default for all Birds
 MultiProductDetailClass.prototype.isFlighted = function () { return this.flighted };

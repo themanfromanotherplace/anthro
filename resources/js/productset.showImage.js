@@ -1,9 +1,8 @@
 
 //helper class
-function showMainImage(productInstance){
-	
-	this.productInstance = productInstance;
-};
+function showMainImage(){};
+
+showMainImage.prototype.productInstance = false;
 
 showMainImage.prototype.imgObj = null;
 

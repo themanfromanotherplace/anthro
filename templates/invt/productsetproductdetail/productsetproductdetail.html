@@ -56,6 +56,9 @@ function ratingsDisplayed<venda_invtref>(totalReviewsCount, avgRating, ratingsOn
 var prodDetail<venda_invtref> = new MultiProductDetailClass();
 	
 	prodDetail<venda_invtref>.panelWidth = "511";
+	
+	prodDetail<venda_invtref>.showMainImage = new showMainImage();
+	prodDetail<venda_invtref>.showMainImage.productInstance = prodDetail<venda_invtref> //needs rewriting!!!!! really bad
 
 <venda_tpcomment>// START - javascript for tell a friend, emwbis, write and read a review. Please remove if not needed </venda_tpcomment>
 <venda_tpcomment>//  see /venda-support/js/Venda/Widget/InvtPopup.js for usage details</venda_tpcomment>
