@@ -1,0 +1,303 @@
+/***********************************/
+/**        BASE STYLES         **/
+/***********************************/
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif; 
+	font-size: 62.5%; /* 10px */
+	font-style: normal; 
+	font-weight: normal;
+	color: #666;
+	margin: 0;
+	padding: 0;
+	/*background:#e8eeed url(../images/holiday2011_background.jpg) repeat-y top center;*/
+       background:#fff;
+	text-align: center;
+}
+h1 {margin:0; padding:0;}
+h2, h3 {margin:0; padding:0;}
+p {margin:0; padding:0; font-size: 1em;}
+img {border:none;}
+a {color:#666;outline:none;}
+
+.pagecatnav li a span,
+.Lcatnav ul ul ul li span,
+.Lcattree,
+.error,
+.Lsearch h2,
+ul.Lustypelinks,
+.items_added,
+.items_empty,
+.footer,
+.footer2,
+.copyright,
+.topnavigation li.topnavsale,
+#term p a.refine-link,
+#collate h3,
+#collate .termtext,
+#collate .viewall,
+#selectCur .currency,
+#myacc-col-two #tlusermyform h1,
+.pclookup,
+.LshowRVISiteWide h2,
+.containerpwrm p,
+.containerpwrm label,
+.addressbook .headeraddr,
+#orderhistory h1,
+#orderhistory h2,
+#orderhistory #orders_list tr.buttons a,
+#paymentdetails #dontsaveccWrapper label a,
+#orderconfirmation .checkboxterms label a,
+#orderdetail h1,
+#orderdetail h2,
+.ohListVoucher table th.hdrVouchers,
+#ordersummary .hdrOrderTotal,
+#orderconfirmation h2,
+#orderreceipt h2,
+.orderitems table.wizrtable th,
+#ordersummary table th.hdrOrderTotal {
+	font-family: "Courier New", Arial, Helvetica, Verdana, sans-serif;
+}
+
+.phonenumber {
+	font-family: Courier New, Georgia, Arial, Helvetica, Verdana, sans-serif;
+}
+.phonenumber a{
+	font-family: Georgia, Arial, Helvetica, Verdana, sans-serif;
+}
+
+input,
+select,
+textarea {
+	font-family: "Courier New", Arial, Georgia, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+	color: #333;
+	outline:none;
+}
+
+table.wizrtable {border-width:0; border-spacing:0; border-style:none; border-collapse:collapse;}
+#checkout table.wizrtable {width:100%;}
+
+#tlusermyform input,
+#tlusermyform select,
+.container input,
+.container select {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+/* FONT WEIGHT */
+.bold {font-weight: bold;}
+.invtdesc2, .Lcat_categorylist h1 {
+	font-weight:normal;
+}
+
+/* FONT STYLE */
+.Lcustomerquotes h3 {text-align:center;}
+
+/****************/
+/* STATIC PAGES */
+/****************/
+#content-staticpage, #popups  {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size:1em;
+	color:#999;
+}
+#content-staticpage h1, #content-staticpage h2, #content-staticpage h3, #content-staticpage h4, #content-staticpage h5,
+#popups h1, #popups h2, #popups h3, #popups h4, #popups h5 {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size:1em;
+	font-weight:normal;
+	color:#333;
+}
+#content-staticpage h1, #popups h1 {
+	font-weight:bold;
+}
+
+/*********************/
+/* BACKGROUNDS COLOR */
+/*********************/
+/*Red*/
+#admin, #admin a {background-color:#f00; color:#fff;}
+
+/* TEXT DECORATION */
+a, 
+.featcats ul h2 a:hover,
+.featcats ul p a:hover,  
+#categorylist ul h2 a:hover,
+.featprods h2 a {text-decoration: none;font-weight:normal;}
+
+a:hover, 
+.categories h2 a {text-decoration: underline;}
+
+.was, .attr_was {/*text-decoration:line-through;*/}
+
+/* TEXT ALIGN */
+.psel {text-align: center;}
+
+/***********/
+/*  LISTS  */
+/***********/
+ul {margin: 0; padding: 0; list-style: none;}
+
+/***********/
+/* BORDERS */
+/***********/
+.Lcat_categorylist img {border:1px solid #666666;}
+#storelocatorresults h1 {margin:0 0 6px 0;}
+
+/******************/
+/*     FORMS      */
+/******************/
+form {display: inline; margin: 0;}
+input, select {vertical-align: middle;}
+radio, checkbox {vertical-align: middle; float: left; width: 10%;}
+legend {display: none;}
+fieldset {margin: 0; border-width: 0; clear: both; padding:0;}
+fieldset label {float: left; width: 33%;}
+fieldset div div {clear: none; float: left; width: 33%;}
+fieldset div {clear: both;}
+
+input#formzipc {
+	border: 0;
+	background-color: #666666;
+	color: #ffffff;
+	padding: 2px;
+	width: 60%;
+}
+
+/********************/
+/*     BUTTONS      */
+/********************/
+#buttons input {border:0 !important;}
+
+/******************/
+/* COMMON CLASSES */
+/******************/
+.first {border-left: 0;}
+.hide {display: none;}
+.left {float: left;}
+.right {float: right;}
+.invisible {text-indent:-5000px;visibility:hidden;}
+.clear-all {clear: both; height: 0; line-height: 0; font-size: 0;}
+.re-waiHide {position:absolute;left:0px;top:-500px;width:1px;height:1px;overflow:hidden;}
+
+/****************************/
+/* NOTIFICATIONS AND ERRORS */
+/****************************/
+.error,
+#atbmsg,
+.required {
+	color: #c33;
+	font-size: 1.2em;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+.error a ,
+.error a :link, 
+.error a :visited,
+.error a :hover,
+.error a :active {
+	color: #c33;
+	font-weight:bold;
+}
+#atbmsg,
+.required {letter-spacing: 5px;}
+#productdetail #addedmsg {display:none;}
+
+/* admin elements */
+#admin {margin:0; padding:.5em 0;}
+#admin a {text-decoration:underline;}
+
+/*no javascript*/
+#noscript {margin:0; padding:.5em 0;}
+#noscript a {text-decoration:underline;}
+
+/* Communication option */
+.smsbox {display:none;}
+
+/*SWITCHER */
+/* Display SWITCHER on header */
+.regionLangSwitch {
+    float: right;
+    width: 100%;
+	}
+.showFlaglang {float:right; margin:0; padding:7px 2px 0 0; text-align:left; width:83px;font-family:"Courier New";
+font-size:14px;}
+.showFlaglang a {float:left;width:83px;}
+.showFlaglang a,
+.showFlaglang a:link, 
+.showFlaglang a:visited,
+.showFlaglang a:hover,
+.showFlaglang a:active {
+	color:#666;
+	font-weight:bold;
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.showFlaglang span{background: url(../images/sprite_icon.gif) no-repeat 0 0; float: left; margin: 0; padding:0 0 0 30px; text-align: left; width:53px;height:16px;}
+.showFlaglang span.en{background-position:0 -119px;}
+.showFlaglang span.de{background-position:0 -133px;}
+.showFlaglang span span{background:none; margin: 0; padding:0 2px 0 0;width:auto;}
+
+
+/* SWITCHER Layer */
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* Component containers */
+.ui-widget-content {background:#ffffff;padding:0;}
+
+/* Dialog */
+.ui-dialog {position:absolute; width:auto; overflow:hidden; text-align:left;}
+.ui-dialog .ui-dialog-titlebar { display:none;}
+.ui-dialog .ui-dialog-content {border:0; padding:0; zoom: 1; margin:0 0 5px;overflow:hidden;}
+.ui-dialog .ui-dialog-buttonpane {text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em;}
+.ui-dialog .ui-dialog-buttonpane button { float: right; margin: .5em .4em .5em 0; cursor: pointer; line-height: 1.4em; width:auto; overflow:visible; }
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+.popupIframe{position:absolute;width:100%;height:120px;z-index:-1;}
+
+/*switcher position*/
+.regionView {left:auto !important; background:url(../images/bg_switcher.gif) no-repeat 0 0;color:#656565;right:40px;top:66px !important;}
+.regionLangSwitchContent{margin:0;padding:0;background:none transparent;}
+.regionLangSwitchContent .regionLangTitle {color:#656565; font-weight:bold; letter-spacing:2px;width:197px; margin:0;padding: 10px 12px 10px 12px;min-height: 12px;}
+
+/*switch cur*/
+.regionLangSwitchContent .contentCurrency {float:left;width:197px; margin:0;padding:8px 12px 10px 12px;min-height: 16px;} /*IE6*/
+#txtswitchcur {float:left; font :1em Courier New; color:#cb3333;text-transform:lowercase;width:85px;padding:3px 0 0 0;letter-spacing:1px;}
+#txtswitchcur.selected {color:#656565;}
+#txtswitchlang {float:left; font :1em Courier New; color:#cb3333;text-transform:lowercase;width:85px;padding:3px 0 0 0;letter-spacing:1px;}
+#txtswitchlang.selected,
+#txtswitchcur.login {color:#656565;}
+
+.contentCurrency span {float:left;font:bold 1.3em Courier New;padding:0 9px 0 0;}
+.contentCurrency span a {color:#656565;font-weight:bold;padding: 0 4px;}
+.contentCurrency span a.selected,
+.contentCurrency span a.login {color:#CB3333;font-weight:bold;padding: 0 4px;background:#E6F5FA;}
+
+/*switch lang*/
+.regionLangSwitchContent .contentLlanguage {float:left;width:209px; margin:0;padding:0 0 0 12px;min-height:25px;}
+#txtswitchlang {padding:1px 0 0 0;}
+.contentLlanguage ul{margin:0;  padding:0;}
+.contentLlanguage .solidVerticalBar {padding: 0 3px;}
+.contentLlanguage span {float:left;}
+.contentLlanguage span a {font:1em arial; color:656565;letter-spacing:1px; display:block; margin:0 0 12px 0;padding: 0 4px;}
+.contentLlanguage .uk a {background-position:50px -121px;}
+.contentLlanguage .germany a {background-position:50px -135px;}
+.contentLlanguage span a.selected {color:#CB3333;padding: 0 4px;background:#E6F5FA;}
+
+/*switch button*/
+.linesubmit {float:left;width:196px; margin:0;padding:7px 12px 0 13px;} /*IE6*/
+.linesubmit a,
+.linesubmit a:link,
+.linesubmit a:active
+.linesubmit a:visited {color:#656565; font-weight:bold; letter-spacing:2px;text-decoration:none;}
+.linesubmit a:hover {text-decoration:underline;}
+.linesubmit a.rLSwitchSubmit {float:right;color:#999;}
+.linesubmit a.rLSwitchSubmit.selectDone,
+.linesubmit a.rLSwitchSubmit.selectDone:link,
+.linesubmit a.rLSwitchSubmit.selectDone:visited,
+.linesubmit a.rLSwitchSubmit.selectDone:hover,
+.linesubmit a.rLSwitchSubmit.selectDone:active {color:#CB3333;}
+
+
