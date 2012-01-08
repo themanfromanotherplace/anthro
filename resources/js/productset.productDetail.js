@@ -123,7 +123,7 @@ function MultiProductDetailClass(){
 			
 			// replace main image with 'spacer.gif' if alternate image is empty
 			if (jQuery(altDiv).find("img.validImg").length == 0) {	
-				jQuery(mediumDiv+" .jqzoomm").remove();
+				jQuery(mediumDiv+" .jqzoomevo").remove();
 				
 				jQuery(mediumDiv+" #loadingMain" + thisProductDetailInstance.configObjArea["objProductUniqueId"]).after("<img src=\"" + thisProductDetailInstance.configDefault["noImage"]["medium"] + " style=\"display:none\" onload=\"var instance = " + thisProductDetailInstance.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + thisProductDetailInstance.configObjArea["objProductUniqueId"] + "); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);\">");
 				
@@ -152,7 +152,7 @@ function MultiProductDetailClass(){
 	            preloadImages: false,
 	            alwaysOn:false
 	            };*/
-		jQuery('.jqzoomm').jqzoom(options);//?? only for one dom element instance??
+		jQuery('.jqzoomevo').jqzoom(options);//?? only for one dom element instance??
 	};
 	
 	
@@ -226,7 +226,7 @@ function MultiProductDetailClass(){
 			} else {
 				//does not use imageware - find out more about image ware - is this lightbox plugin??
 				if (mappingData.imgPopup != "") {
-						imgTag = this.configDefault["loadingImage"]+"<a id=\"tehee\" href=\""+mappingData.imgPopup+"\"  class=\"jqzoomm\" onclick=\"javascript: var instance = " + this.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + this.configObjArea["objProductUniqueId"] + "); instance.doPopup('"+mappingData.attValue+"',this.href, "+mappingData.currentImage+"); return false;\" title=\""+mappingData.imgTitle+"\"><img id=\"venga\" src=\""+mappingData.imgSource+"\" style=\"display:none\" onload=\"javascript: var instance = " + this.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + this.configObjArea["objProductUniqueId"] + "); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);\"></a>";
+						imgTag = this.configDefault["loadingImage"]+"<a id=\"tehee\" href=\""+mappingData.imgPopup+"\"  class=\"jqzoomevo\" onclick=\"javascript: var instance = " + this.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + this.configObjArea["objProductUniqueId"] + "); instance.doPopup('"+mappingData.attValue+"',this.href, "+mappingData.currentImage+"); return false;\" title=\""+mappingData.imgTitle+"\"><img id=\"venga\" src=\""+mappingData.imgSource+"\" style=\"display:none\" onload=\"javascript: var instance = " + this.productManagerGlobalVariableName + ".getProductObjectByUniqueId(" + this.configObjArea["objProductUniqueId"] + "); instance.showMainImage.setImg(this); instance.showMainImage.doIt(instance.showMainImage);\"></a>";
 				} else {
 					if (this.allImages[mappingData.attValue].clicked[mappingData.currentImage] == true) {
 						imgTag = "<img src=\""+mappingData.imgSource+"\" alt=\""+this.configDefault["largeNotAvailAltText"]+"\">";
