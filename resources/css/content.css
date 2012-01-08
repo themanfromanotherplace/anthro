@@ -454,7 +454,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /***************************************************************/
 
 /********************JQZOOMEV********************/
-.productset-productdetail-col1 .zoomPad{
+.zoomPad{
 	position:relative;
 	float:left;
 	/*z-index:99;*/
@@ -463,7 +463,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 
 
 
-.productset-productdetail-col1 .zoomPreload{
+.zoomPreload{
    -moz-opacity:0.8;
    opacity: 0.8;
    filter: alpha(opacity = 80);
@@ -489,7 +489,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 }
 
 
-.productset-productdetail-col1 .zoomPup{
+.zoomPup{
 	overflow:hidden;
 	background-color: #FFF;
 	-moz-opacity:0.6;
@@ -502,7 +502,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
   cursor:crosshair;
 }
 
-.productset-productdetail-col1 .zoomOverlay{
+.zoomOverlay{
 	position:absolute;
 	left:0px;
 	top:0px;
@@ -515,7 +515,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
   z-index:101;
 }
 
-.productset-productdetail-col1 .zoomWindow{
+.zoomWindow{
 	position:absolute;
 	left:110%;
 	top:40px;
@@ -525,12 +525,12 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
   z-index:10000;
   z-index:110;
 }
-.productset-productdetail-col1 .zoomWrapper{
+.zoomWrapper{
 	position:relative;
 	border:1px solid #999;
   z-index:110;
 }
-.productset-productdetail-col1 .zoomWrapperTitle{
+.zoomWrapperTitle{
 	display:block;
 	background:#999;
 	color:#FFF;
@@ -548,21 +548,21 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
   opacity: 0.6;
   filter: alpha(opacity = 60);
 }
-.productset-productdetail-col1 .zoomWrapperImage{
+.zoomWrapperImage{
 	display:block;
   position:relative;
   overflow:hidden;
   z-index:110;
 
 }
-.productset-productdetail-col1 .zoomWrapperImage img{
+.zoomWrapperImage img{
   border:0px;
   display:block;
   position:absolute;
   z-index:101;
 }
 
-.productset-productdetail-col1 .zoomIframe{
+.zoomIframe{
   z-index: -1;
   filter:alpha(opacity=0);
   -moz-opacity: 0.80;
@@ -571,7 +571,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
   display:block;
 }
 
-.productset-productdetail-col1 .invtmedia{
+.invtmedia{
 	overflow:visible !important;
 }
 
