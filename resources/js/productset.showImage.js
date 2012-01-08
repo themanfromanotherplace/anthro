@@ -1,35 +1,37 @@
 
 //helper class
-function showMainImage(){};
-
-showMainImage.prototype.productInstance = false;
-
-showMainImage.prototype.imgObj = null;
-
-showMainImage.prototype.doIt = function(instanceObject) {
-	    
-	   //var instance = instanceObject;
-	    //var self = this;
-	    
-		setTimeout(function(){
+function showMainImage(){
+	
+	this.productInstance = false;
+	
+	this.imgObj = null;
+	
+	this.doIt = function(instanceObject) {
+		    
+		   //var instance = instanceObject;
+		    //var self = this;
+		    
+			setTimeout(function(){
+				
+				 	instanceObject.hideLoading()
+				 
+				 }, 700);
+		};
+	
+	this.hideLoading = function() {
+	
+			if (document.getElementById("loadingMain" + this.productInstance.configObjArea["objProductUniqueId"])) {
+				document.getElementById("loadingMain" + this.productInstance.configObjArea["objProductUniqueId"]).style.display = "none";
+			}	
 			
-			 	instanceObject.hideLoading()
-			 
-			 }, 700);
+			this.imgObj.style.display = "block";
+			
+			this.productInstance.activejQzoom();
+			
+			};
+			
+	this.setImg = function(imgObj) {
+			this.imgObj = imgObj;
 	};
 
-showMainImage.prototype.hideLoading = function() {
-
-		if (document.getElementById("loadingMain" + this.productInstance.configObjArea["objProductUniqueId"])) {
-			document.getElementById("loadingMain" + this.productInstance.configObjArea["objProductUniqueId"]).style.display = "none";
-		}	
-		
-		this.imgObj.style.display = "block";
-		
-		this.productInstance.activejQzoom();
-		
-		};
-		
-showMainImage.prototype.setImg = function(imgObj) {
-		this.imgObj = imgObj;
 };
