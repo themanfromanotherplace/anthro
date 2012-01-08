@@ -2,7 +2,7 @@
 //new class for attribute swatch
 
 
-AttributeSwatchClass = function(){};
+function AttributeSwatchClass(){};
 
 AttributeSwatchClass.prototype.config = {};
 

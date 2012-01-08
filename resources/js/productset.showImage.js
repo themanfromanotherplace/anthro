@@ -1,6 +1,6 @@
 
 //helper class
-showMainImage = function(productInstance){
+function showMainImage(productInstance){
 	
 	this.productInstance = productInstance;
 };

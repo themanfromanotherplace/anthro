@@ -1,5 +1,5 @@
 
-MultiProductDetailManager = function(){};
+window.MultiProductDetailManager = function(){};
 
 
 MultiProductDetailManager.prototype.productDetailObjects = [];

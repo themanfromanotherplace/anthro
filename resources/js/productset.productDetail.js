@@ -1,6 +1,6 @@
 
 
-MultiProductDetailClass = function(){
+function MultiProductDetailClass(){
 	
 	this.showMainImage = new showMainImage(this);
 	
