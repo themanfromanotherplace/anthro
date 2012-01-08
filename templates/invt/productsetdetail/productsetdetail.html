@@ -560,6 +560,276 @@ function getSupplyid(){
 <venda_inctemplate name=cmDisplayShop5s,type=includes/tracking/coremetrics>
 
 
+<style>
+
+
+
+/********************************************/
+/* continter for main / large product image */
+/********************************************/
+
+.productDetails .productdetail-image{
+	border:1px solid red;
+	float: left;
+	width: 290px;
+}
+
+/*************************************************/
+/* Alternate view product thumnails div container*/
+/*************************************************/
+.productDetails .productdetail-altview{
+	border:1px solid green;
+	float: left;
+	margin-bottom: 0px;
+	margin-left: 1px;
+	margin-right: 0px;
+	margin-top: 0px;
+	width: 60px;
+}
+
+.productDetails .invtmedia{
+	position:relative;
+}
+
+/*********************************************/
+/* FOR LARGE PRODUCT POUP CONTAINER ALT VIEWS*/
+/*********************************************/
+.popupMainImageAltView { float: left; margin-bottom: 0px; margin-left: 2px; margin-right: 0px; margin-top: 0px; text-align: left; width: 50px; }
+.popupMainImageAltView .alternateHeader { background-color: transparent;
+bottom: 0px;
+color: rgb(0, 0, 0);
+font-family: "Courier New";
+left: 0px;
+margin-bottom: 0px;
+margin-left: 1px;
+margin-right: 1px;
+margin-top: 0px;
+padding-bottom: 4px;
+padding-left: 4px;
+padding-right: 4px;
+padding-top: 4px;
+position: absolute;
+text-align: center;
+width: 448px;
+ }
+ 
+.popupMainImageAltView .download { 
+background-color: rgb(221, 213, 200);
+line-height: 15px;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0px;
+text-transform: uppercase;
+width: 200px;
+ }
+ 
+ 
+/********************************/
+/* FOR LARGE PRODUCT POUP IMAGE */
+/********************************/
+.popupMainImage { float: left; height: 680px; width: 453px; } 
+.popupMainImage img { width: 453px; }
+
+
+
+
+
+
+/* styles for tooltip element  */
+.swatchUnavailTooltipArrow{ 
+font-size: 1em;
+font-weight: 400;
+line-height: 16px;
+text-align: center;
+}
+
+.swatchUnavailTooltip { 
+background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: url("http://anthropologie.uat.venda.com/content/ebiz/anthropologie/resources/images/bg_tooltips.gif");
+background-origin: padding-box;
+background-position: 0px 0px;
+background-repeat: no-repeat;
+background-size: auto;
+font-size: 1em;
+font-weight: 400;
+height: 24px;
+left: -60px;
+line-height: 16px;
+margin-bottom: 0px;
+margin-left: -3px;
+margin-right: 0px;
+margin-top: 5px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position: absolute;
+text-align: center;
+top: -30px;
+width: 70px;
+ }
+ 
+ /*ATTRIBUTE SWATCH STYLES*/
+ /*************************/
+ 
+ /*only 2 attributes at present*/
+ .swatch2{
+		 clear: both;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		padding-bottom: 8px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 8px;
+		width: 100%;
+}
+ 
+.productswatch .attributeList_1{ 
+	margin-left: -7px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.productswatch .attributeList_2{
+	margin-left: -4px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+} 
+
+.label-att1{
+	float: left;
+	font-size: 1.1em;
+	font-weight: 700;
+	text-align: right;
+	text-transform: lowercase;
+	width: 40px;
+}
+ 
+.label-att2{
+	float: left;
+	font-size: 1.1em;
+	font-weight: 700;
+	line-height: 18px;
+	text-align: right;
+	text-transform: lowercase;
+	width: 40px;
+}
+
+
+
+.productdetail-att1{
+
+}
+
+.productdetail-att2{
+	float: left;
+	margin-left: 6px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	width: 228px;
+}
+
+
+.swatch1 .productdetail-swatch{
+	float: left;
+	margin-left: 6px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	width: 228px;
+}
+
+
+.attributeList_att1{
+	margin-left: -7px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.attributeList_att1 li{
+	display: inline;
+	float: left;
+	margin-bottom: 1px;
+	margin-left: 7px;
+}
+.attributeList_att1 li a{
+	cursor: pointer;
+	display: inline;
+	float: left;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+}
+
+.attributeList_att1 li a.selected {border:solid 1px #999;}
+
+
+
+.attributeList_att2{
+	margin-left: -4px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.attributeList_att2 li{
+	clear: left; 
+	display: inline;
+	float: left;
+	margin-bottom: 5px;
+	margin-left: 4px;
+}
+
+.attributeList_att2 li a{
+	border:1px solid #999;
+	text-align:center;
+	min-width:140px;
+	padding:2px 9px;
+	cursor: pointer;
+	display: inline;
+	float: left;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+}
+
+.attributeList_att2 li a.notavail { 
+	background-color: rgb(238, 238, 238);
+	color: rgb(204, 204, 204);
+ }
+ 
+ .attributeList_att2 li a.selected {background-color:#FF9;}
+
+/*******************************************/
+/*SOLD OUT TOOTIP IN PRODUCT SWATCH #2 LIST*/
+/*******************************************/
+.swatchUnavailTooltip{
+	background:url(http://anthropologie.uat.venda.com/content/ebiz/anthropologie/resources/images/bg_tooltips.gif) no-repeat 0 0;
+	font-size:1em;
+	font-weight:normal;
+	position:absolute;
+	text-align:center;
+	left:-60px;
+	top:-30px;
+	width:70px;
+	height:24px;
+	line-height:16px;
+	padding:0;
+	margin:5px 0 0 -3px;
+}
+
+/*************************************************/
+/*Product detail image box (viewlarge for jqzoom)*/
+/*************************************************/
+.viewlargecontainer {padding:0 10px 0 0;border-right:1px solid #999;text-transform: lowercase;}
+.viewlargecontainer a {text-decoration:underline;}
+.viewlargecontainer .viewlarge {float:left;}
+.viewlargecontainer .download {float:left;padding:0 10px;margin:0;}
+
+</style>
+
 <venda_tpcomment><!-- START PRODUCT FAMILY OR OUTFIT - MULTIPLE PRODUCTS --></venda_tpcomment>
 <venda_extflds hideempty=0,realseq=0,template=pdxtdisplay,pdxtsetproducts,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+
 

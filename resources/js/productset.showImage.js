@@ -11,11 +11,11 @@ function showMainImage(){
 		   //var instance = instanceObject;
 		    //var self = this;
 		    
-			setTimeout(function(){
+			//setTimeout(function(){
 				
 				 	instanceObject.hideLoading()
 				 
-				 }, 700);
+				// }, 700);
 		};
 	
 	this.hideLoading = function() {
