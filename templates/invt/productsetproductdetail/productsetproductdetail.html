@@ -378,7 +378,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 			
 			<venda_block label=701,chkatt=notnull>
 			<div class="qtymessage">
-				<label for="qty"><venda_text id=site.quantity></label><input name="qty" id="qty<venda_invtref>" type="text" value="1" size="3" maxlength="3" onkeypress="if(event.keyCode==13){getSupplyid();document.form.ex.value='co_disp-shopc';return Venda.Widget.MinicartPopup.addProduct(event);}">
+				<label for="qty"><venda_text id=site.quantity></label><input name="qty" id="qty<venda_invtref>" type="text" value="1" size="3" maxlength="3" onkeypress="if(event.keyCode==13){getSupplyid();document.form<venda_invtref>.ex.value='co_disp-shopc';return Venda.Widget.MinicartPopup.addProduct(event);}">
 				
 				<!-- Attribute Swatch alert message -->
 				<div id="alertmessage<venda_invtref>" class="normal"><venda_block label=704,selatt1=notnull,selatt2=notnull,operator=or><venda_text id=site.product.detail.select.att> <venda_block label=128,selatt1=notnull><venda_att1></venda_block label=128><venda_block label=129,selatt2=notnull> <venda_text id=site.product.detail.select.att.and><venda_att2></venda_block label=129>.</venda_block label=704></div>
@@ -395,7 +395,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 </venda_block label=1350>
 			<!-- if product does have attributes -->
 			<venda_block label=32,invtpreorder!=1>
-			<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/<venda_sessionlanguage>/bt_addtobasket.gif" id="addproduct<venda_invtref>" class="add" alt="<venda_text id=site.button.alt.add_to_basket.invt>" onClick="getSupplyid();document.form.ex.value='co_disp-shopc';">
+			<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/<venda_sessionlanguage>/bt_addtobasket.gif" id="addproduct<venda_invtref>" class="add" alt="<venda_text id=site.button.alt.add_to_basket.invt>" onClick="getSupplyid();document.form<venda_invtref>.ex.value='co_disp-shopc';">
 			<a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" class="buy"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/<venda_sessionlanguage>/bt_buynow.gif" alt="<venda_text id=site.button.checkout_nospace>"></a>
 			</venda_block label=32>
 			</venda_block label=701>
@@ -515,12 +515,18 @@ function getSupplyid(){
 	var slotfield = "<venda_block label=111,invtivtype=accessories,invtivtype=apparel,invtivtype=shoes,invtivtype=home,invtivtype=family,invtivtype=giftcard,operator=or>_b</venda_block label=111><venda_block label=112,invtivtype!=accessories,invtivtype!=apparel,invtivtype!=shoes,invtivtype!=home,invtivtype!=family,invtivtype!=giftcard>_a</venda_block label=112>";
 	var suplyfield = "<venda_invtsuplsku>_";
 	var oixtImageUrl;
-	for (var each in attributeData) {
-		if (typeof(attributeData[each].attr) == "object"){
-			var atrsupplyfield = jQuery('#productdetail-att1 a.selected').attr("title");
-			if (attributeData[each].attr.att1 == atrsupplyfield){
-				oixtImageUrl = suplyfield+attributeData[each].detail.atrsuplsku+slotfield;
-				document.form.set_oitemxoixtaddedproduct_<venda_invtref>.value = oixtImageUrl;
+	for (var each in attributeData<venda_invtref>) {
+	
+		if (typeof(attributeData<venda_invtref>[each].attr) == "object"){
+		
+			var atrsupplyfield = jQuery('#productdetail-att1<venda_invtref> a.selected').attr("title");
+			
+			if (attributeData<venda_invtref>[each].attr.att1 == atrsupplyfield){
+			
+				oixtImageUrl = suplyfield+attributeData<venda_invtref>[each].detail.atrsuplsku+slotfield;
+				
+				document.form<venda_invtref>.set_oitemxoixtaddedproduct_<venda_invtref>.value = oixtImageUrl;
+				
 			}
 		}
 	}
