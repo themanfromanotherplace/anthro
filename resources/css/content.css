@@ -409,6 +409,19 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /*PRODUCT SET PRODUCT - form multiple products in templates/invt/productsetproductdetail */
 /*****************************************************************************************/
 
+.productDetails .productdetail-viewlarge {padding:0 10px 0 0;border-right:1px solid #999;text-transform: lowercase;}
+.productDetails .productdetail-viewlarge a {text-decoration:underline;}
+.productDetails .productdetail-viewlarge .viewlarge {float:left;}
+.productDetails .productdetail-viewlarge .download {float:left;padding:0 10px;margin:0;} 
+
+.productDetails .tellafriend {padding:0 10px;border-right:1px solid #999;text-transform: lowercase;}
+.productDetails .tellafriend a {text-decoration:underline;}
+.productDetails .print {padding:0 10px 0 10px;text-transform: lowercase;}
+.productDetails .print a {text-decoration:underline;}
+.productDetails .print img {display:none;}
+.productDetails .Lsocialbookmarking {background:none;}
+
+
 /****************************************/
 /* PRODUCT SET PRODUCT:					*/
 /* main ul for multiple product details */
@@ -425,7 +438,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /**********************************************************/
 .productset-productdetail-col1{float:left; clear:left; width:175px; height: 250px;}
 .productset-productdetail-col2{float:left; clear:none; width:335px; height: 250px;}
-.productset-productdetail-col3{float:left; clear:none; width:168px; border-left: 1px dashed #BBB; margin-left: 44px;height: 250px; padding-left: 23px !important;}
+.productset-productdetail-col3{float:left; clear:none; width:168px; border-left: 1px dashed #BBB; margin-left: 28px;height: 250px; padding-left: 23px !important;}
 
 
  
