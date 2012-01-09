@@ -406,9 +406,9 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .p10-t{padding-top:10px;}
 .p15-t{padding-top:15px;}
 .p25-t{padding-top:25px;}
-.p10-b{padding-top:10px;}
-.p15-b{padding-top:15px;}
-.p25-b{padding-top:25px;}
+.p10-b{padding-bottom:10px;}
+.p15-b{padding-bottom:15px;}
+.p25-b{padding-bottom:25px;}
 
 
 /*****************************************************************************************/
@@ -425,7 +425,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .productDetails .print {padding:0 10px 0 10px;text-transform: lowercase;}
 .productDetails .print a {text-decoration:underline;}
 .productDetails .print img {display:none;}
-.productDetails .Lsocialbookmarking {background:none;}
+.productDetails .socialbookmarking {background:none;padding-left:10px;}
 
 
 /****************************************/
@@ -462,7 +462,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .productset-productdetail-col2 .productdetail-tab .desc ol {list-style-position:inside;}
 .productset-productdetail-col2 .productdetail-tab .desc ul, .productsetdetail .set-details .attrproducts .attrproduct ul {list-style:disc inside;}
 .productset-productdetail-col2 .productdetail-tab .desc .invtdesc1 {padding:0;margin:5px 0;}
-.productset-productdetail-col2 .productdetail-tab .desc .invtdesc2, #productdetail .desc .invtdesc4 {display:none;}
+.productset-productdetail-col2 .productdetail-tab .desc .invtdesc2, .productset-productdetail-col2 .productdetail-tab .desc .invtdesc4 {display:none;}
 .productset-productdetail-col2 .productdetail-tab .desc .sku {
 	margin-top:25px;
 	clear:both;
@@ -526,7 +526,8 @@ width: 70px;
  /*ATTRIBUTE SWATCH STYLES*/
  /*************************/
  .productset-productdetail-col3 .swatch2{
-		 clear: both;
+ 		
+		clear: both;
 		overflow-x: hidden;
 		overflow-y: hidden;
 		padding-bottom: 8px;
