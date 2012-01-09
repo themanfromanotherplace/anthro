@@ -110,7 +110,11 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		</venda_block label=27>
 		<venda_block label=28,invtacctot&lt;1>
 		<!-- related products (predictor) -->
-		<venda_invtrelated limit=3,threshold=0,template=related>
+		
+		<div id="productsetrelated">
+			<venda_invtrelated limit=3,threshold=0,template=related>
+		</div>
+		
 		</venda_block label=28>
 
 		<venda_tpcomment><!-- product extended fields --></venda_tpcomment>
@@ -135,7 +139,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 	</div>
 	<!-- end product detail col1 -->
 	<!-- start product detail col2 -->
-	<div class="productdetail-col2">
+	<div class="productdetail-col2 productset">
 		<venda_tpcomment><!-- product cycling --></venda_tpcomment>
 		<venda_category temp=product_cycling,rec=icat,ref=<venda_curcatref>,itemsperpage=100>
 		<script type="text/javascript">

@@ -10,8 +10,6 @@ function AttributeSwatchClass(){
 	
 	this.init = function(userConfig){
 		jQuery.extend(this.config, userConfig);
-		
-		alert(this.config.formHTMLObject);
 	};
 	
 	

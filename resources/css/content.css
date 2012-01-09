@@ -414,12 +414,16 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /*****************************************************************************************/
 /*PRODUCT SET PRODUCT - form multiple products in templates/invt/productsetproductdetail */
 /*****************************************************************************************/
-#youmayalsolike{ width:70px; }
-#youmayalsolike h2{ color: #666; font-family: "Georgia", "Times New Roman", "Times", serif;font-size: 11px;font-style: italic;font-weight: 400;letter-spacing: 0px;line-height: 13px;text-align: center;text-transform: lowercase;width: 65px; }
-#youmayalsolike ul { padding:0px;  margin:0px;}
-#youmayalsolike ul li {	float: left;margin-right: 0px;clear:left;}
-#youmayalsolike ul li div.image{ height: 106px; padding-bottom: 1px; width: 70px;}
-#youmayalsolike ul li div.image img{ height: 106px; padding-bottom: 1px; width: 70px;}
+
+div.productdetail-col2.productset{ width: 290px !important; }
+div.productdetail-col2.productset #productdetail-tab{ width: 284px !important;  }
+
+#productsetrelated{ display:block !important; width:70px;}
+#productsetrelated h2{ display:block !important; color: #666; font-family: "Georgia", "Times New Roman", "Times", serif;font-size: 11px;font-style: italic;font-weight: 400;letter-spacing: 0px;line-height: 13px;text-align: center;text-transform: lowercase;width: 65px;}
+#productsetrelated ul{ display:block !important; padding:0px;  margin:0px;}
+#productsetrelated ul li{ float: left;margin-right: 0px;clear:left;}
+#productsetrelated ul li div.image{ height: 106px; padding-bottom: 1px; width: 70px;}
+#productsetrelated ul li div.image img{ height: 106px; padding-bottom: 1px; width: 70px;}
 
 
 .productDetails .productdetail-viewlarge {padding:0 10px 0 0;border-right:1px solid #999;text-transform: lowercase;}
@@ -460,12 +464,11 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .productset-productdetail-col1 .productsetdetail-image{	float: left; height: 217px; position: relative; width: 145px;}
 .productset-productdetail-col1 .productsetdetail-imageviews{ display:none; clear: none; float: left; text-align: center; width: 58px;}
 .productset-productdetail-col1 .productsetdetail-imageviews{ white-space:wrap;}
-.productset-productdetail-col1 .loadingMain{ height: 217px; position: relative; width: 145px; }
+.productset-productdetail-col1 .loadingMain, .productset-productdetail-col1 .loadingMain img{ height: 217px; position: relative; width: 145px; }
 
  
 .productset-productdetail-col2 h2{ 	font-family: "Georgia"; font-size: 1.4em; font-weight: 400;	margin-top: 4px;}
 .productset-productdetail-col2 .productdetail-tab .desc{padding: 15px 11px; color: #666; font-size: 1.1em; }
-
 .productset-productdetail-col2 .productdetail-tab .desc ol {list-style-position:inside;}
 .productset-productdetail-col2 .productdetail-tab .desc ul, .productsetdetail .set-details .attrproducts .attrproduct ul {list-style:disc inside;}
 .productset-productdetail-col2 .productdetail-tab .desc .invtdesc1 {padding:0;margin:5px 0;}
