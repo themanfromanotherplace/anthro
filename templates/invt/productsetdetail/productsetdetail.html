@@ -110,11 +110,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		</venda_block label=27>
 		<venda_block label=28,invtacctot&lt;1>
 		<!-- related products (predictor) -->
-		
-		<div id="productsetrelated">
-			<venda_invtrelated limit=3,threshold=0,template=related>
-		</div>
-		
+		<venda_invtrelated limit=3,threshold=0,template=related>
 		</venda_block label=28>
 
 		<venda_tpcomment><!-- product extended fields --></venda_tpcomment>
@@ -466,7 +462,9 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		</div>
 		
 		<!-- youmayalsolike  -->
-	<venda_element element=youmayalsolike>
+	<div id="productsetrelated">
+		<venda_element element=youmayalsolike>
+	</div>
 		
 	</div>
 	<venda_block label=1234,mode=value,<venda_htxt mode=get,name=accessory>=notnull>
