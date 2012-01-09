@@ -462,12 +462,19 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .productset-productdetail-col2 .productdetail-tab .desc ol {list-style-position:inside;}
 .productset-productdetail-col2 .productdetail-tab .desc ul, .productsetdetail .set-details .attrproducts .attrproduct ul {list-style:disc inside;}
 .productset-productdetail-col2 .productdetail-tab .desc .invtdesc1 {padding:0;margin:5px 0;}
-.productset-productdetail-col2 .productdetail-tab .desc .invtdesc2, .productset-productdetail-col2 .productdetail-tab .desc .invtdesc4 {display:none;}
+.productset-productdetail-col2 .productdetail-tab .desc .invtdesc2, 
+.productset-productdetail-col2 .productdetail-tab .desc .invtdesc4 {display:none;}
 .productset-productdetail-col2 .productdetail-tab .desc .sku {
 	margin-top:25px;
 	clear:both;
 	position:relative;
 }
+
+.productset-productdetail-col2 .productdetail-tab .desc ul{ float: left;clear: left;}
+.productset-productdetail-col2 .productdetail-tab .desc li{ float: left;clear: left;}
+.productset-productdetail-col2 .productdetail-tab .desc p{ float: left;clear: left;}
+
+
 .productset-productdetail-col2 .productdetail-tab {clear:both;margin-top:20px;clear:both;width:334px;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav {overflow:hidden;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav li {padding:0;float:left; width:108px;}
@@ -655,7 +662,7 @@ width: 70px;
  
 .productset-productdetail-col3 .attributeList_att2 li a.selected {background-color:#FF9;}
 
-.productset-productdetail-col3 .atributesPrice {padding:0;margin:20px 0 8px 0;}
+.productset-productdetail-col3 .atributesPrice {padding:0;margin:3px 0 8px 0;}
 .productset-productdetail-col3 .attrprice {font-family:Georgia;}
 .productset-productdetail-col3 .attr-sellprice {color:#333;font-size:1.5em;font-weight:bold;}
 .productset-productdetail-col3 .attr-wasprice {color:#999;font-size:1.1em;}
