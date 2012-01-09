@@ -414,6 +414,10 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /*****************************************************************************************/
 /*PRODUCT SET PRODUCT - form multiple products in templates/invt/productsetproductdetail */
 /*****************************************************************************************/
+.productdetail-col2 #relatedbasket{
+	
+}
+
 
 .productDetails .productdetail-viewlarge {padding:0 10px 0 0;border-right:1px solid #999;text-transform: lowercase;}
 .productDetails .productdetail-viewlarge a {text-decoration:underline;}
