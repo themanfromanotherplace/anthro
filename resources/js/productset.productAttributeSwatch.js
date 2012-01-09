@@ -102,7 +102,7 @@ function AttributeSwatchClass(){
 	
 	this.displayListAttributes = function (attrColumn, attrName){
 		//change so unique 
-		var str = '<ul class="attributeList_' + attrColumn + this.productDetailInstance.configObjArea["objProductUniqueId"] + ' attribute_' +attrColumn + '_' + this.productDetailInstance.configObjArea["objProductUniqueId"] + '">';
+		var str = '<ul class="attributeList_' + attrColumn + ' attributeList_' + attrColumn + this.productDetailInstance.configObjArea["objProductUniqueId"] + ' attribute_' +attrColumn + '_' + this.productDetailInstance.configObjArea["objProductUniqueId"] + '">';
 		var chkString = "";
 		
 		for(var i=0; i < this.ListAttributes[attrColumn].length; i++){
@@ -191,7 +191,7 @@ function AttributeSwatchClass(){
 		this.existingAttributes = new Array();
 		this.availAttributes = new Array();
 		a=0;	
-		var str= '<ul class="attributeList_' + attrColumn + ' attribute_' + attrColumn + '_' + this.productDetailInstance.configObjArea["objProductUniqueId"] + '">';
+		var str= '<ul class="attributeList_' + attrColumn + ' attributeList_' + attrColumn + ' attribute_' + attrColumn + '_' + this.productDetailInstance.configObjArea["objProductUniqueId"] + '">';
 		for (var eachAttrSet in this.productInstance.attributeValues) {
 			if(this.productInstance.attributeValues[eachAttrSet].data["atronhand"]>0){
 				this.existingAttributes[a]=this.productInstance.attributeValues[eachAttrSet].values[attrColumn]; 

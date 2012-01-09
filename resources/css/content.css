@@ -442,9 +442,9 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /* three colum layout for the products                    */
 /* Col 1 = image, Col 2 = description, Col 3 = attributes */
 /**********************************************************/
-.productset-productdetail-col1{float:left; clear:left; width:175px; height: 250px;}
-.productset-productdetail-col2{float:left; clear:none; width:335px; height: 250px;}
-.productset-productdetail-col3{float:left; clear:none; width:168px; border-left: 1px dashed #BBB; margin-left: 28px;height: 250px; padding-left: 23px !important;}
+.productset-productdetail-col1{float:left; clear:left; width:175px; }
+.productset-productdetail-col2{float:left; clear:none; width:335px; }
+.productset-productdetail-col3{float:left; clear:none; width:168px; border-left: 1px dashed #BBB; margin-left: 28px; padding-left: 23px !important;}
 
 
  
@@ -481,6 +481,12 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 	overflow:hidden;
 	min-height:100px;
 	clear:both;
+	/*border: 1px solid #BBB;*/
+	/*border-image: initial;*/
+	/*-webkit-box-shadow: 5px 5px 5px 1px rgba(187, 187, 187, 0.5);*/
+	/*-moz-box-shadow: 5px 5px 5px 1px rgba(187, 187, 187, 0.5);*/
+	/*box-shadow: 5px 5px 5px 1px rgba(187, 187, 187, 0.5);*/
+	/*padding: 18px 6px 1px;*/
 }
 
 
