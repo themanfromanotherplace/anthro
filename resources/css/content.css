@@ -421,6 +421,7 @@ div.productdetail-col2.productset{ width: 290px !important; }
 div.productdetail-col2.productset #productdetail-tab{ width: 284px !important;  }
 
 #productsetrelated{ display:block !important; width:70px;}
+#productsetrelated div{ display:block !important; width:70px;}
 #productsetrelated h2{ display:block !important; color: #666; font-family: "Georgia", "Times New Roman", "Times", serif;font-size: 11px;font-style: italic;font-weight: 400;letter-spacing: 0px;line-height: 13px;text-align: center;text-transform: lowercase;width: 65px;}
 #productsetrelated ul{ display:block !important; padding:0px;  margin:0px;}
 #productsetrelated ul li{ float: left;margin-right: 0px;clear:left;}
