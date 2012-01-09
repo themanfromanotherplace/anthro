@@ -401,8 +401,11 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 
 
 /* Helper classes - move to base.css */
-.drawn-bg{background:url(../images/bg_divider.gif) no-repeat top left;padding-top:8px;}
-
+.drawn-bg{background:url(../images/bg_divider.gif) no-repeat top left;}
+.p5-t{padding-top:5px;}
+.p10-t{padding-top:10px;}
+.p15-t{padding-top:15px;}
+.p25-t{padding-top:25px;}
 
 
 /*****************************************************************************************/
@@ -628,7 +631,46 @@ width: 70px;
 	color: rgb(204, 204, 204);
  }
  
- .productset-productdetail-col3 .attributeList_att2 li a.selected {background-color:#FF9;}
+.productset-productdetail-col3 .attributeList_att2 li a.selected {background-color:#FF9;}
+
+.productset-productdetail-col3 .atributesPrice {padding:0;margin:20px 0 8px 0;}
+.productset-productdetail-col3 .attrprice {font-family:Georgia;}
+.productset-productdetail-col3 .attr-sellprice {color:#333;font-size:1.5em;font-weight:bold;}
+.productset-productdetail-col3 .attr-wasprice {color:#999;font-size:1.1em;}
+
+.productset-productdetail-col3 .invtatr {width:100%;margin:8px 0;background:url(bg_divif.gif) no-repeat 0 0;}
+.productset-productdetail-col3 .swatchlist {float:left;width:274px;clear:both;}
+.productset-productdetail-col3 .swatch1 {width:100%;clear:both;overflow:hidden;padding:9px 0;line-height:12px;}
+.productset-productdetail-col3 .swatch1 .label-att1 {
+	font-weight:bold;
+	font-size:1.1em;
+	text-align:right;
+	text-transform:lowercase;
+	float:left;
+	width:40px;
+}
+.productset-productdetail-col3 .swatch1 .productDetails-swatch {
+	float:left;
+	width:228px;
+	margin-left:6px;
+	overflow:hidden;
+}
+.productset-productdetail-col3 .swatch2 {width:100%;clear:both;overflow:hidden;padding:8px 0;}
+.productset-productdetail-col3 .swatch2 .label-att2 {
+	font-weight:bold;
+	font-size:1.1em;
+	text-transform:lowercase;
+	text-align:right;
+	line-height:18px;
+	float:left;
+	width:40px;
+}
+.productset-productdetail-col3 .swatch2 .productDetails-att2 {
+	float:left;
+	width:228px;
+	margin-left:6px;
+	overflow:hidden;
+}
 
 /*******************************************/
 /*SOLD OUT TOOTIP IN PRODUCT SWATCH #2 LIST*/
