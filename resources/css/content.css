@@ -414,9 +414,14 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /*****************************************************************************************/
 /*PRODUCT SET PRODUCT - form multiple products in templates/invt/productsetproductdetail */
 /*****************************************************************************************/
-.productdetail-col2 #relatedbasket{
-	
-}
+#youmayalsolike{ width:70px; }
+#youmayalsolike h2{ 
+color: rgb(156, 197, 201);
+font-family: "Georgia", "Times New Roman", "Times", serif;font-size: 11px;font-style: italic;font-weight: 400;letter-spacing: 0px;line-height: 13px;text-align: center;text-transform: lowercase;width: 65px; }
+#youmayalsolike ul { padding:0px;  margin:0px;}
+#youmayalsolike ul li {	float: left;margin-right: 0px;clear:left;}
+#youmayalsolike ul li div.image{ height: 106px; padding-bottom: 1px; width: 70px;}
+#youmayalsolike ul li div.image img{ height: 106px; padding-bottom: 1px; width: 70px;}
 
 
 .productDetails .productdetail-viewlarge {padding:0 10px 0 0;border-right:1px solid #999;text-transform: lowercase;}
