@@ -434,7 +434,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .productset-productdetail-col1 .productsetdetail-image{	float: left; height: 217px; position: relative; width: 145px;}
 .productset-productdetail-col1 .productsetdetail-imageviews{ display:none; clear: none; float: left; text-align: center; width: 58px;}
 .productset-productdetail-col1 .productsetdetail-imageviews{ white-space:wrap;}
-.productset-productdetail-col1 .productdetail-viewlarge{  }
+.productset-productdetail-col1 .productdetail-viewlarge{}
 
  
 .productset-productdetail-col2 h2{ 	font-family: "Georgia"; font-size: 1.4em; font-weight: 400;	margin-top: 8px;}
