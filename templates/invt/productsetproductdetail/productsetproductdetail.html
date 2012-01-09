@@ -445,6 +445,13 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		
 		</script>
 
+		<!-- product other links -->
+		<p class="tellafriend"><a href="<venda_dispview invt=<venda_invtref>>&temp=tellafriend" id="tellafriend_link"><venda_text id=site.product_detail.tell_friend></a></p>
+	    <p class="print"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/icon_print.gif" class="printicon" alt="<venda_text id=site.link.print>" border="0"> <a href="#" onClick="window.print();"><venda_text id=site.link.print></a></p>
+	    <venda_page page=socialbookmark>
+	
+
+
 		<venda_tpcomment><!-- div id 'grid' is used to show the product grid --></venda_tpcomment>
 		<div id="grid<venda_invtref>"></div>
 		
@@ -471,6 +478,9 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		</venda_block label=340>
 		<!--END MULTIBUY -->
 		
+		
+		
+		
 		<venda_block label=30,invtpreorder=notnull>
 <!-- if future release date -->
 <!-- p class="release"><venda_text id=site.product_detail.release_date></p -->
@@ -496,12 +506,7 @@ if (typeof Venda.Widget.InvtPopups != "undefined" || Venda.Widget.InvtPopups) {
 		</script>
 	</venda_block label=1235>
 	
-	<p class="tellafriend"><a href="<venda_dispview invt=<venda_invtref>>&temp=tellafriend" id="tellafriend_link"><venda_text id=site.product_detail.tell_friend></a></p>
-		
-	<p class="print"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/icon_print.gif" class="printicon" alt="<venda_text id=site.link.print>" border="0"> <a href="#" onClick="window.print();"><venda_text id=site.link.print></a></p>
-		
-	<venda_page page=socialbookmark>
-	
+
 	<!-- end product detail col2 -->
 </div>
 

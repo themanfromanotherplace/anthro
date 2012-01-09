@@ -406,6 +406,9 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .p10-t{padding-top:10px;}
 .p15-t{padding-top:15px;}
 .p25-t{padding-top:25px;}
+.p10-b{padding-top:10px;}
+.p15-b{padding-top:15px;}
+.p25-b{padding-top:25px;}
 
 
 /*****************************************************************************************/
@@ -453,7 +456,7 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 .productset-productdetail-col1 .productdetail-viewlarge{}
 
  
-.productset-productdetail-col2 h2{ 	font-family: "Georgia"; font-size: 1.4em; font-weight: 400;	margin-top: 8px;}
+.productset-productdetail-col2 h2{ 	font-family: "Georgia"; font-size: 1.4em; font-weight: 400;	margin-top: 4px;}
 .productset-productdetail-col2 .productdetail-tab .desc{padding: 15px 11px; color: #666; font-size: 1.1em; }
 .productset-productdetail-col2 .productdetail-tab {clear:both;margin-top:20px;clear:both;width:334px;}
 .productset-productdetail-col2 .productdetail-tab .yui-nav {overflow:hidden;}
