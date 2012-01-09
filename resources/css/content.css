@@ -415,6 +415,8 @@ p.tellafriend, p.print, p.writereview, p.readreview {float:left;}
 /*PRODUCT SET PRODUCT - form multiple products in templates/invt/productsetproductdetail */
 /*****************************************************************************************/
 
+
+
 div.productdetail-col2.productset{ width: 290px !important; }
 div.productdetail-col2.productset #productdetail-tab{ width: 284px !important;  }
 
