@@ -1,12 +1,38 @@
+/*
+ * This file is used in conjunction with the other productset. javascript files
+ * in order to handle multiple products on the productset layout for product sets and
+ * outfits.
+ * 
+ * Overides: Venda.Widget.MinicartPopup.addProduct
+ */
+
 if(Venda.Widget.MinicartPopup != "undefined"){
 
 Venda.Widget.MinicartPopup.addProduct = function(e) {
 	YAHOO.util.Event.stopEvent(e); // suppress form submit
 	
-	/* prevent from invalid attribute */
-	if (typeof Venda.Ebiz.AttributeSwatch.validateAttributes != "undefined"){
-		if(!Venda.Ebiz.AttributeSwatch.validateAttributes()){return false;}
-	}
+	var productAttObj, productObj, invtId, invtForm = document.getElementById( e.currentTarget.form.id );
+	
+	//try and get the right form
+	if( invtForm != "undefined" ){
+		
+		//get the unique id of the product
+		invtId = invtForm.elements["invt"].value;
+		
+		//get the attribute object for it
+		if (typeof productManager.getProductObjectByUniqueId != "undefined"){
+			if(!productManager.getProductObjectByUniqueId( invtId )){return false;}
+			
+			productObj = productManager.getProductObjectByUniqueId( invtId );
+			
+		};
+	
+		/* prevent from invalid attribute */
+		if (typeof productObj.attributeSwatchInstance.validateAttributes != "undefined"){
+			if(!productObj.attributeSwatchInstance.validateAttributes()){return false;}
+		}
+	
+	};
 	
 	// animation variables to send to UpdateMinicart.js
 	// if this variable is blank, then no colour animation will occur
