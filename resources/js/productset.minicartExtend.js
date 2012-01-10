@@ -56,8 +56,8 @@ Venda.Widget.MinicartPopup.addProduct = function(e) {
 	
 	// find out which form ID was submitted
 	if (this.id="qty") { this.id = "addproduct";}
-	clickedID = this.id;
-	formID = clickedID+'form';
+	clickedID = this.id+invtId;
+	formID = clickedID+'form'+invtId;
 	
 	// find original source so you can restore it, make this variable global so UpdateMinicart.js can use it
 	var buttonID = document.getElementById(clickedID);
